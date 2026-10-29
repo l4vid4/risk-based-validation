@@ -8,4 +8,4 @@ Run the tests relevant to your change first. Use `python -m unittest discover -s
 
 Reproduce performance and defect-detection claims, retain raw outputs and describe environment/workload. Include end-to-end time, not only test count. Never remove negative controls to make results look better. Prefer native tool adapters with conservative fallback over unverified dependency inference.
 
-No hosted repository URL or maintainer contact is configured in this source delivery. Once published, use that repository's contribution/issue channels and fill in its security contact before inviting private reports.
+Use the [issue templates](https://github.com/l4vid4/risk-based-validation/issues/new/choose) for reproducible bugs or adoption results. Discuss a larger adapter before implementing it. Security-sensitive reports belong in the repository's private vulnerability-reporting channel linked from [SECURITY.md](SECURITY.md).

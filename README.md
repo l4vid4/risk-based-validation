@@ -1,14 +1,49 @@
 # risk-based-validation
 
-Proportionate verification for Codex and other coding agents. Select useful checks from reviewed change-impact evidence, preserve high-risk gates, explain omissions, and reuse only valid results.
+[![Validation](https://github.com/l4vid4/risk-based-validation/actions/workflows/ci.yml/badge.svg)](https://github.com/l4vid4/risk-based-validation/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-78cbb0.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-4c86c6.svg)](pyproject.toml)
+
+![Run what matters. Know when to stop.](docs/assets/overview.svg)
+
+**Help your coding agent decide what to verify—and when it has enough evidence to stop.**
+
+After a fix, feature or refactor, select useful checks from reviewed change impact, preserve high-risk gates, explain omissions, and reuse equivalent passing evidence. Built for Codex and other agents that load `SKILL.md`.
 
 [中文说明](README.zh-CN.md) · [Skill](skills/risk-based-validation/SKILL.md) · [CLI/configuration](skills/risk-based-validation/references/configuration.md) · [Research](docs/research.md) · [Design](docs/design.md) · [Measured evaluation](benchmarks/results/local.md)
 
 This is a working Agent Skill plus a small, dependency-free Python CLI. It uses Git evidence and explicit reverse component dependencies; it does not claim to infer every dependency or prove that a passing subset is defect-free. Unknown changes default to the full registered inventory. Repository/user-required checks remain required.
 
+## Try it in a temporary repository
+
+```sh
+git clone https://github.com/l4vid4/risk-based-validation.git
+cd risk-based-validation
+python -m examples.demo
+```
+
+The demo runs real checks in a disposable fixture: select **1 of 6** checks for a local refactor, reuse its identical-state pass, then detect a tenant-isolation defect with fresh security checks. It leaves your project untouched. Requires Python 3.10+ and Git.
+
+## Where it helps
+
+| Change | Verification decision |
+|---|---|
+| A known local component changes | Check that component and affected consumers. |
+| Already-passing inputs and context are identical | Reuse trustworthy evidence when explicitly enabled. |
+| Permissions, persistence, unknown impact or a failed check | Widen verification and preserve mandatory checks. |
+| Required checks are complete | Explain the evidence and stop, instead of repeating unchanged tests. |
+
 ## Install
 
-Requirements: Python 3.10+ and Git, on Windows, Linux or macOS. Runtime code uses only the standard library. Windows/Python 3.13 is the locally exercised environment; the CI matrix is provided but has not been run here.
+Requirements: Python 3.10+ and Git, on Windows, Linux or macOS. Runtime code uses only the standard library. See the [current CI matrix](https://github.com/l4vid4/risk-based-validation/actions/workflows/ci.yml) and [recorded local validation](docs/validation.md) for exercised environments.
+
+With the optional [community skills CLI](https://github.com/vercel-labs/skills) (Node.js 22.20+), install for Codex:
+
+```sh
+npx skills add l4vid4/risk-based-validation --skill risk-based-validation -a codex
+```
+
+Then invoke `$risk-based-validation` after a code change. To choose another supported agent, omit `-a codex`. Node is an installer dependency only; the helper uses Python and Git. The third-party installer has its own telemetry policy; see its documentation for opt-out settings.
 
 Download or clone this repository, then copy `skills/risk-based-validation` into the target agent's skill directory. For Codex repository scope, run from this project (replace the target path):
 
@@ -25,7 +60,7 @@ python -m pip install .
 rbv --help
 ```
 
-This is a local source install; version 0.1.0 has not been published to PyPI or a remote Git host by this delivery.
+This installs the local CLI from source. Prebuilt Skill ZIP and wheel assets are available in [GitHub Releases](https://github.com/l4vid4/risk-based-validation/releases). The package is not published to PyPI.
 
 ## Use
 
@@ -80,3 +115,5 @@ docs/                          research, decisions and evaluation limits
 ```
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md). MIT licensed. Future work should focus on native dependency/coverage adapters, larger real-world evaluations and lower analysis overhead, while keeping conservative fallbacks and transparent evidence.
+
+If this helps your workflow, **star the repository** to help others discover it. More valuable still: [share a real workload](https://github.com/l4vid4/risk-based-validation/issues/new/choose), report a skipped-check concern, or contribute a reproducible regression. Negative performance results are welcome.

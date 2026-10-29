@@ -1,12 +1,35 @@
 # risk-based-validation
 
+[![验证状态](https://github.com/l4vid4/risk-based-validation/actions/workflows/ci.yml/badge.svg)](https://github.com/l4vid4/risk-based-validation/actions/workflows/ci.yml)
+[![MIT](https://img.shields.io/badge/license-MIT-78cbb0.svg)](LICENSE)
+
+![根据风险选择验证，并知道何时停止](docs/assets/overview.svg)
+
 面向 Codex 和其他编程 Agent 的风险驱动验证 Skill：让验证力度与实际风险相匹配，减少重复执行，同时保留关键质量底线。
 
-这是可运行的 Skill、Python CLI、配置约定和验收场景组成的项目。运行时仅依赖 Python 标准库与 Git；不用模型 API、数据库或服务端。项目没有自动发布到 GitHub、PyPI，也没有修改你的全局 Agent 设置。
+这是可运行的 Skill、Python CLI、配置约定和验收场景组成的项目。运行时仅依赖 Python 标准库与 Git；不用模型 API、数据库或服务端。源码和发布包托管于 [GitHub](https://github.com/l4vid4/risk-based-validation)，尚未发布到 PyPI。
+
+## 先试一个真实演示
+
+```sh
+git clone https://github.com/l4vid4/risk-based-validation.git
+cd risk-based-validation
+python -m examples.demo
+```
+
+演示在临时仓库中实际执行检查：局部重构从 6 个检查中选 1 个、相同状态复用通过结果，再检出租户隔离缺陷并要求重新验证安全检查。不会修改你的项目。需要 Python 3.10+ 与 Git。
 
 ## 安装与运行
 
 需要 Python 3.10+、Git。将整个 `skills/risk-based-validation` 目录放入 Agent 的技能目录。Codex 项目级安装示例（从本项目运行，替换目标路径）：
+
+也可以使用社区 skills CLI（安装器要求 Node.js 22.20+）：
+
+```sh
+npx skills add l4vid4/risk-based-validation --skill risk-based-validation -a codex
+```
+
+安装后调用 `$risk-based-validation`。省略 `-a codex` 可选择其他支持的 Agent。Node 仅用于第三方安装器，其遥测与退出设置见 [安装器官方说明](https://github.com/vercel-labs/skills)。下面的手动安装方式只需 Python：
 
 ```sh
 python tools/install_skill.py --target /path/to/project/.agents/skills
@@ -62,4 +85,6 @@ python -m benchmarks.evaluate --cases 1000 --repetitions 1 --output benchmarks/r
 
 接下来优先考虑接入 Nx/Bazel/testmon 等原生影响与证据工具、增加真实开源仓库的历史缺陷回放、验证映射漂移、优化大仓库采集开销，而不是增加固定数量的测试或引入复杂服务。
 
-本地实际验收平台为 Windows / Python 3.13。仓库提供 Windows/Linux 的 Python 3.10/3.13 CI 定义，但未将其描述为已在远程通过。项目采用 MIT 许可证；贡献方式见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+本地实际验收平台为 Windows / Python 3.13，远程验证状态请查看 [GitHub Actions](https://github.com/l4vid4/risk-based-validation/actions/workflows/ci.yml)。项目采用 MIT 许可证；贡献方式见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+如果项目对你有帮助，欢迎 **Star** 帮助更多开发者发现它；也欢迎通过 [使用反馈入口](https://github.com/l4vid4/risk-based-validation/issues/new/choose) 分享真实耗时、错误跳过和回归案例。负面结果同样有价值。

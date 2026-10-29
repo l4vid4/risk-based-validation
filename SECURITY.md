@@ -12,4 +12,4 @@ Keep `.rbv/` private and ignored. Configured commands and logs may contain secre
 
 Ignored files, installed dependencies and external systems are not automatically tracked. Include file inputs explicitly or disable reuse. Context tokens must rotate with external state. Never cache flaky, time-dependent or mutable-service checks without a reliable equivalence model.
 
-For a security issue, do not post credentials, private logs or exploit-sensitive details publicly. This local delivery has no remote maintainer contact yet; the publisher should configure a private reporting channel on the eventual repository before public release.
+For a security issue, do not post credentials, private logs or exploit-sensitive details publicly. Use [GitHub private vulnerability reporting](https://github.com/l4vid4/risk-based-validation/security/advisories/new) to contact the maintainer privately. Include a minimal sanitized reproduction, affected version and the impact on check selection, execution or evidence reuse.

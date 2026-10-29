@@ -12,6 +12,12 @@ license = {text = "MIT"}
 keywords = ["agent-skills", "codex", "regression-testing", "test-selection"]
 classifiers = ["Development Status :: 3 - Alpha", "Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License"]
 
+[project.urls]
+Homepage = "https://github.com/l4vid4/risk-based-validation"
+Repository = "https://github.com/l4vid4/risk-based-validation"
+Issues = "https://github.com/l4vid4/risk-based-validation/issues"
+Documentation = "https://github.com/l4vid4/risk-based-validation#readme"
+
 [project.scripts]
 rbv = "rbv.cli:main"
 

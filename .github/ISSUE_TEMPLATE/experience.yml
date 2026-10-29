@@ -1,0 +1,23 @@
+name: Share an adoption result
+description: Share a real workload, timings, or an example of incorrect omission.
+title: "[Experience] "
+body:
+  - type: textarea
+    id: workload
+    attributes:
+      label: Workload and verification approach
+      description: Language/framework, check inventory, change type, and whether native impact tools are already used.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Results and tradeoffs
+      description: Include end-to-end cost, not only command count. Negative results and missed defects are especially useful.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction or public repository
+      description: Optional link or sanitized fixture. Do not include confidential data.

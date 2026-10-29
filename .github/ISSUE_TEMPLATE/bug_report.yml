@@ -1,0 +1,33 @@
+name: Bug report
+description: Report incorrect selection, evidence reuse, or execution behavior.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "For security-sensitive reports use the Security tab. Remove secrets, private paths and proprietary code from examples."
+  - type: textarea
+    id: problem
+    attributes:
+      label: Expected and actual behavior
+      description: Especially note skipped checks that could detect a distinct regression.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Include a small diff, relevant configuration and exact commands when possible.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Sanitized plan/report, failure status and relevant log excerpts. A small public fixture is ideal.
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "OS, Python, Git, agent, project version"
+    validations:
+      required: true
