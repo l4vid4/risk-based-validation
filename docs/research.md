@@ -34,4 +34,4 @@ Cost estimates order checks only. Failure-driven broadening is finite and never 
 
 ## Limits of this research
 
-The implementation does not copy source code from these projects or claim equivalence with their dependency analyses. Comparative measurements use our executable fixture versus its direct full-suite baseline, not Nx/testmon/Bazel/STARTS/Stryker benchmarks. Hosted CI, packaging registries and production integrations were not exercised by this delivery.
+The implementation does not copy source code from these projects or claim equivalence with their dependency analyses. Comparative measurements use our executable fixture versus its direct full-suite baseline, not Nx/testmon/Bazel/STARTS/Stryker benchmarks. Later publication added hosted CI and public GitHub installation evidence in [validation.md](validation.md); production integrations and PyPI publication have not been exercised.

@@ -2,6 +2,8 @@
 
 Repository: https://github.com/l4vid4/risk-based-validation
 
+Published GitHub announcement and feedback thread: https://github.com/l4vid4/risk-based-validation/discussions/1. The repository is public, with topics, a release, install instructions, a runnable demo and the CI matrix. External-platform drafts below remain unsent.
+
 These are ready-to-adapt external announcement drafts. They are not claims that posts have already been sent or that any directory has accepted the project. Do not post the same content repeatedly or solicit reciprocal/paid stars. Evaluate adoption by useful installs, reproducible feedback, retained use and fixes as well as genuine stars.
 
 ## English short post

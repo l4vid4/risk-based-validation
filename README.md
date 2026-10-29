@@ -116,4 +116,4 @@ docs/                          research, decisions and evaluation limits
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md). MIT licensed. Future work should focus on native dependency/coverage adapters, larger real-world evaluations and lower analysis overhead, while keeping conservative fallbacks and transparent evidence.
 
-If this helps your workflow, **star the repository** to help others discover it. More valuable still: [share a real workload](https://github.com/l4vid4/risk-based-validation/issues/new/choose), report a skipped-check concern, or contribute a reproducible regression. Negative performance results are welcome.
+If this helps your workflow, **star the repository** to help others discover it. Join the [launch discussion](https://github.com/l4vid4/risk-based-validation/discussions/1), [share a real workload](https://github.com/l4vid4/risk-based-validation/issues/new/choose), report a skipped-check concern, or contribute a reproducible regression. Negative performance results are welcome.

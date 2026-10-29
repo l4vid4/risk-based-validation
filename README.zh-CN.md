@@ -87,4 +87,4 @@ python -m benchmarks.evaluate --cases 1000 --repetitions 1 --output benchmarks/r
 
 本地实际验收平台为 Windows / Python 3.13，远程验证状态请查看 [GitHub Actions](https://github.com/l4vid4/risk-based-validation/actions/workflows/ci.yml)。项目采用 MIT 许可证；贡献方式见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-如果项目对你有帮助，欢迎 **Star** 帮助更多开发者发现它；也欢迎通过 [使用反馈入口](https://github.com/l4vid4/risk-based-validation/issues/new/choose) 分享真实耗时、错误跳过和回归案例。负面结果同样有价值。
+如果项目对你有帮助，欢迎 **Star** 帮助更多开发者发现它；也欢迎加入 [发布讨论](https://github.com/l4vid4/risk-based-validation/discussions/1)，或通过 [使用反馈入口](https://github.com/l4vid4/risk-based-validation/issues/new/choose) 分享真实耗时、错误跳过和回归案例。负面结果同样有价值。

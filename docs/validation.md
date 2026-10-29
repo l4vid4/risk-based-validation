@@ -1,6 +1,21 @@
 # Local validation record
 
-Date: 2026-10-29, Asia/Shanghai. Exercised locally on Windows, Python 3.13.9, Git 2.49.0.windows.1. No remote CI run or other-platform pass is claimed.
+Date: 2026-10-29, Asia/Shanghai. Local runs used Windows, Python 3.13.9, Git 2.49.0.windows.1. The public GitHub validation below was performed later during publication and is separate from the original local record.
+
+## Public GitHub validation
+
+[GitHub Actions run 40826540866](https://github.com/l4vid4/risk-based-validation/actions/runs/40826540866) completed successfully for code commit `0148e84c4b567dcba738ba664811398df917b995`:
+
+| Runner | Python | Tests | Demo | Wheel build |
+|---|---|---|---|---|
+| Windows latest | 3.10 | success, 36 cases run | success | success |
+| Windows latest | 3.13 | success, 36 cases run | success | success |
+| Ubuntu latest | 3.10 | success, 36 cases run | success | success |
+| Ubuntu latest | 3.13 | success, 36 cases run | success | success |
+
+The standard-layout Skill was also discovered by community skills CLI 1.7.4. Installing from the public GitHub repository into an isolated temporary directory succeeded, including invoking the copied Python entry point and checking that its license was included. Installer telemetry was disabled during validation; these checks are not reported as user adoption.
+
+The isolated demo and portable distribution checks passed locally during publication. Final publication edits after the CI-tested commit update documentation only. The workflow skips documentation-only pushes, so the same code was not subjected to a redundant matrix run. The earlier benchmark source hashes still match the engine and fixture.
 
 ## Automated behavior
 
@@ -27,4 +42,4 @@ Tests cover observable decision and execution boundaries, including high-risk ga
 
 The benchmark [raw data](../benchmarks/results/local.json) and [generated table](../benchmarks/results/local.md) record both direct full execution and risk-based execution. The additional [larger successful-workload comparison](../benchmarks/results/scale.md) separates a case where expensive unrelated checks dominate from the primary small-suite experiment. Interpret each workload separately; no universal speedup is asserted.
 
-Open limitations remain explicit: one unexercised symlink case locally, unexecuted remote CI matrix, synthetic benchmark rather than production history, and no model/harness behavioral eval. These are reported confidence limits, not reasons to repeat unrelated tests.
+Open limitations remain explicit: the original local symlink-permission skip, synthetic benchmark rather than production history, and no model/harness behavioral eval. The public CI matrix above adds platform evidence without erasing the historical local record. These are reported confidence limits, not reasons to repeat unrelated tests.
