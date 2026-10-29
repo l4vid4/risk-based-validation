@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "impact_reviewed": false,
+  "docs": ["docs/*.md", "README.md"],
+  "global": ["tools/*"],
+  "components": {
+    "core": {"paths": ["src/core/*"]},
+    "api": {"paths": ["src/api/*"], "depends_on": ["core"]}
+  },
+  "protected": [
+    {"name": "tenant access", "paths": ["src/api/access.py"], "required_tags": ["security"]}
+  ],
+  "tests": [
+    {"id": "core", "command": ["{python}", "-m", "unittest", "tests.test_core"], "components": ["core"], "inputs": ["tests/test_core.py"], "cost": 2},
+    {"id": "api", "command": ["{python}", "-m", "unittest", "tests.test_api"], "components": ["api"], "inputs": ["tests/test_api.py"], "tags": ["security"], "cost": 5, "timeout": 60}
+  ]
+}

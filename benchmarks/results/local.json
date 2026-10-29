@@ -1,0 +1,3100 @@
+{
+  "schema_version": 1,
+  "environment": {
+    "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "git": "git version 2.49.0.windows.1"
+  },
+  "method": {
+    "cases_per_group": 1000,
+    "repetitions": 1,
+    "scenario_filter": null,
+    "source_hashes": {
+      "benchmarks\\evaluate.py": "387baf11179f3f9bee38c7221191f6c66387f365c386051536ccb7a62e85740c",
+      "benchmarks\\fixture.py": "9e019a8271100826ef1e2e984d7b29b828ff122af931c83b621c069c77cbe2df",
+      "skills\\risk-based-validation\\scripts\\rbv\\__init__.py": "d78058b9b077dd5d9693919a39b877dc5dd470a76b85c67ff0fced14ec9b168c",
+      "skills\\risk-based-validation\\scripts\\rbv\\cli.py": "197a8b5e9179ed0f5e50ddc89f86b293778d4f2438098c03fcbc29f822620ae5",
+      "skills\\risk-based-validation\\scripts\\rbv\\config.py": "5c67b0b7afdf263e94d130a52ebdbfde8deef543d9833b69aaa4382e789a28cc",
+      "skills\\risk-based-validation\\scripts\\rbv\\planner.py": "e4c341cdf87e29eb80497513e9446b7134e97ceaf0693538c63ff4324aabbda9",
+      "skills\\risk-based-validation\\scripts\\rbv\\repository.py": "3cf2832fbcb15a3da5cf8efefcd29673ff224f4415719493f153e7a944e85622",
+      "skills\\risk-based-validation\\scripts\\rbv\\runner.py": "a734f42eeab24c41d829dc6407eae992beaae7f6420f3a46627d278a0c5fd1c4"
+    },
+    "timing": "perf_counter; sequential actual subprocesses; raw full suite has no planner overhead; baseline prechecks and cache warmup excluded and disclosed",
+    "synthetic_fixture": true,
+    "network": false,
+    "artificial_sleeps": false
+  },
+  "summary": {
+    "scenarios": 12,
+    "known_defects": 8,
+    "full_detected": 8,
+    "selective_detected": 8,
+    "missed_known_defects": 0,
+    "false_alarms": 0,
+    "full_commands": 72,
+    "executed_commands": 55,
+    "command_reduction_fraction": 0.23611111111111116,
+    "full_command_seconds": 16.29951879987493,
+    "selective_command_seconds": 12.212778800167143,
+    "command_time_reduction_fraction": 0.2507276472320855,
+    "full_wall_seconds": 16.299983899807557,
+    "selective_wall_seconds": 22.757409799960442,
+    "wall_time_reduction_fraction": -0.39616148947417806,
+    "excluded_warmup_seconds": 1.0099428999237716
+  },
+  "negative_control": {
+    "description": "Intentionally incorrect reviewed map labels runtime source as documentation.",
+    "full_detected": true,
+    "selective_detected": false,
+    "selective_status": "no_checks_required",
+    "conclusion": "Reviewed mappings are a trust boundary; file heuristics cannot prove safe omission."
+  },
+  "rows": [
+    {
+      "scenario": "docs_only",
+      "repetition": 0,
+      "known_defect": false,
+      "baseline_clean": true,
+      "full": {
+        "elapsed_seconds": 1.121677599963732,
+        "results": [
+          {
+            "id": "pricing",
+            "returncode": 0,
+            "duration_seconds": 0.10715589998289943,
+            "stdout": "{\"group\": \"pricing\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "cart",
+            "returncode": 0,
+            "duration_seconds": 0.1011766999727115,
+            "stdout": "{\"group\": \"cart\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "security",
+            "returncode": 0,
+            "duration_seconds": 0.10020330001134425,
+            "stdout": "{\"group\": \"security\", \"assertions\": 3000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "data",
+            "returncode": 0,
+            "duration_seconds": 0.6255005000857636,
+            "stdout": "{\"group\": \"data\", \"assertions\": 2000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "search",
+            "returncode": 0,
+            "duration_seconds": 0.09185029997024685,
+            "stdout": "{\"group\": \"search\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "loader",
+            "returncode": 0,
+            "duration_seconds": 0.09575950005091727,
+            "stdout": "{\"group\": \"loader\", \"assertions\": 2000}\n",
+            "stderr": ""
+          }
+        ],
+        "detected_defect": false
+      },
+      "selective": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "e83a91e31f38478e994d08906c04c006",
+        "status": "no_checks_required",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "93f3acc23e330dbafca8e8911e9460b41b0fbbad",
+          "snapshot": "79c8656c498aac13335ed30eb609a64fcd18056ba177c945bda055ca461fb7f6",
+          "config_hash": "6936808efa108098f2b21120319ddbba0d9ab40df3adcd2f5660723eec149a4d",
+          "risk": "minimal",
+          "changed": [
+            "docs/guide.md"
+          ],
+          "affected_components": [],
+          "required_tags": [],
+          "reasons": [],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [
+            "docs/guide.md"
+          ],
+          "selected": [],
+          "skipped": [
+            {
+              "id": "pricing",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "cart",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "security",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "data",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "search",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "loader",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            }
+          ],
+          "estimated_cost": 0,
+          "full_cost": 11
+        },
+        "results": [],
+        "escalated": false,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": false,
+        "context_hash": null,
+        "elapsed_seconds": 1.0703607000177726,
+        "executed_seconds": 0,
+        "diagnosis": null,
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/e83a91e31f38478e994d08906c04c006.json"
+      },
+      "detected_defect": false,
+      "missed_known_defect": false,
+      "false_alarm": false,
+      "warmup": null
+    },
+    {
+      "scenario": "local_refactor",
+      "repetition": 0,
+      "known_defect": false,
+      "baseline_clean": true,
+      "full": {
+        "elapsed_seconds": 1.5428629000671208,
+        "results": [
+          {
+            "id": "pricing",
+            "returncode": 0,
+            "duration_seconds": 0.12792480003554374,
+            "stdout": "{\"group\": \"pricing\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "cart",
+            "returncode": 0,
+            "duration_seconds": 0.11641660006716847,
+            "stdout": "{\"group\": \"cart\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "security",
+            "returncode": 0,
+            "duration_seconds": 0.11642770003527403,
+            "stdout": "{\"group\": \"security\", \"assertions\": 3000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "data",
+            "returncode": 0,
+            "duration_seconds": 0.9165237999986857,
+            "stdout": "{\"group\": \"data\", \"assertions\": 2000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "search",
+            "returncode": 0,
+            "duration_seconds": 0.12381290004123002,
+            "stdout": "{\"group\": \"search\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "loader",
+            "returncode": 0,
+            "duration_seconds": 0.1417186000617221,
+            "stdout": "{\"group\": \"loader\", \"assertions\": 2000}\n",
+            "stderr": ""
+          }
+        ],
+        "detected_defect": false
+      },
+      "selective": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "b126f86044fe40fcbe27a44c485f9ec7",
+        "status": "passed",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "c6f498e7f551a98a514789b6ad007c16ea1f45f7",
+          "snapshot": "544ddb42c8de72f63227e3173d4e2ab60066e4475f8d41e596d92ee67c377376",
+          "config_hash": "6936808efa108098f2b21120319ddbba0d9ab40df3adcd2f5660723eec149a4d",
+          "risk": "targeted",
+          "changed": [
+            "src/search.py"
+          ],
+          "affected_components": [
+            "search"
+          ],
+          "required_tags": [],
+          "reasons": [],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [],
+          "selected": [
+            {
+              "id": "search",
+              "command": [
+                "{python}",
+                "checks.py",
+                "search",
+                "1000"
+              ],
+              "components": [
+                "search"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "affected components: search"
+              ]
+            }
+          ],
+          "skipped": [
+            {
+              "id": "pricing",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "cart",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "security",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "data",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "loader",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            }
+          ],
+          "estimated_cost": 1,
+          "full_cost": 11
+        },
+        "results": [
+          {
+            "id": "search",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.17493690003175288,
+            "log": ".rbv/logs/b126f86044fe40fcbe27a44c485f9ec7/0.log",
+            "log_hash": "19bd4518073d10bf9dd5fcf30a2b7a1ac02d88a685d4a1796e46acfca8d8df0e",
+            "finished_at": 1793243307.3816838,
+            "reused": false,
+            "key": "66e706ae17229a88aa633d9b5bcee1f55ae63bcf3b8829c49a1a474d40df0eee"
+          }
+        ],
+        "escalated": false,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": false,
+        "context_hash": null,
+        "elapsed_seconds": 1.1421158999437466,
+        "executed_seconds": 0.17493690003175288,
+        "diagnosis": null,
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/b126f86044fe40fcbe27a44c485f9ec7.json"
+      },
+      "detected_defect": false,
+      "missed_known_defect": false,
+      "false_alarm": false,
+      "warmup": null
+    },
+    {
+      "scenario": "local_bug",
+      "repetition": 0,
+      "known_defect": true,
+      "baseline_clean": true,
+      "full": {
+        "elapsed_seconds": 1.6931103999959305,
+        "results": [
+          {
+            "id": "pricing",
+            "returncode": 0,
+            "duration_seconds": 0.1360498999711126,
+            "stdout": "{\"group\": \"pricing\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "cart",
+            "returncode": 0,
+            "duration_seconds": 0.11981840000953525,
+            "stdout": "{\"group\": \"cart\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "security",
+            "returncode": 0,
+            "duration_seconds": 0.10169160005170852,
+            "stdout": "{\"group\": \"security\", \"assertions\": 3000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "data",
+            "returncode": 0,
+            "duration_seconds": 0.9512245999649167,
+            "stdout": "{\"group\": \"data\", \"assertions\": 2000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "search",
+            "returncode": 1,
+            "duration_seconds": 0.2182015998987481,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<fixture>\\checks.py\", line 27, in <module>\n    assert search.find(\"stra\\xdfe\", items) == [\"STRASSE\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+          },
+          {
+            "id": "loader",
+            "returncode": 0,
+            "duration_seconds": 0.16608799993991852,
+            "stdout": "{\"group\": \"loader\", \"assertions\": 2000}\n",
+            "stderr": ""
+          }
+        ],
+        "detected_defect": true
+      },
+      "selective": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "4bc66adb1ad847a699245b0f6b2d18a8",
+        "status": "failed",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "3147ed707097de9803046ba011a49421373780e3",
+          "snapshot": "d806cd2d88a7d6324e28e7f16569a52952b98a3bcbdfc2b7ba503dd04196649b",
+          "config_hash": "6936808efa108098f2b21120319ddbba0d9ab40df3adcd2f5660723eec149a4d",
+          "risk": "targeted",
+          "changed": [
+            "src/search.py"
+          ],
+          "affected_components": [
+            "search"
+          ],
+          "required_tags": [],
+          "reasons": [],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [],
+          "selected": [
+            {
+              "id": "search",
+              "command": [
+                "{python}",
+                "checks.py",
+                "search",
+                "1000"
+              ],
+              "components": [
+                "search"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "affected components: search"
+              ]
+            }
+          ],
+          "skipped": [
+            {
+              "id": "pricing",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "cart",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "security",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "data",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "loader",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            }
+          ],
+          "estimated_cost": 1,
+          "full_cost": 11
+        },
+        "results": [
+          {
+            "id": "search",
+            "status": "failed",
+            "returncode": 1,
+            "diagnosis": "nonzero exit: possible product or test defect; inspect assertions and baseline",
+            "duration_seconds": 0.17289569997228682,
+            "log": ".rbv/logs/4bc66adb1ad847a699245b0f6b2d18a8/0.log",
+            "log_hash": "1859bc19db58e982bd9f709b2b5948efdc0a27bb6973cef4fbf2c04d8e5095b0",
+            "finished_at": 1793243312.6573138,
+            "reused": false,
+            "key": "664d1816f770b0c3c68399432e4e0cc46aa95ecf34c4e366911318efc3a59590"
+          },
+          {
+            "id": "cart",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.15473380009643734,
+            "log": ".rbv/logs/4bc66adb1ad847a699245b0f6b2d18a8/1.log",
+            "log_hash": "0e7e35753a1222923d19cc2b2a3ced1eb20af3008b5e941bfb6512f5d98d64a3",
+            "finished_at": 1793243312.8159935,
+            "reused": false,
+            "key": "ae309fc9c7b11d4ac5d5b8749ad638d7983881261075a89de9ad572f53e78035"
+          },
+          {
+            "id": "loader",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.18961460003629327,
+            "log": ".rbv/logs/4bc66adb1ad847a699245b0f6b2d18a8/2.log",
+            "log_hash": "cbc7cbd7e3984263b1b7618868b8e5a0fe8af41f9b63340c3766b9e6a6e6849f",
+            "finished_at": 1793243313.0102842,
+            "reused": false,
+            "key": "537dae3f17af72aae79ddb46b131981e1f7ff39a258e26ee0101b64392ac8a50"
+          },
+          {
+            "id": "pricing",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.17417239991482347,
+            "log": ".rbv/logs/4bc66adb1ad847a699245b0f6b2d18a8/3.log",
+            "log_hash": "4e969717f5a9994cb0215d5a27bc803e0069a3d3a147a4c5af8700a20d5ea265",
+            "finished_at": 1793243313.1887946,
+            "reused": false,
+            "key": "6b1f2aadfbae343851a95522235cba7d9fffc78c4c578563e0ff19f7a60b79ba"
+          },
+          {
+            "id": "security",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.17302240000572056,
+            "log": ".rbv/logs/4bc66adb1ad847a699245b0f6b2d18a8/4.log",
+            "log_hash": "eba7f1d1698731339ebe95a716a9ca5d0b269174d197d28a399545b263150c45",
+            "finished_at": 1793243313.3651392,
+            "reused": false,
+            "key": "fc77c6af3941a99189b1e13c36891348af39aac74a3ddf734c32b70c4a029c61"
+          },
+          {
+            "id": "data",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.8812402000185102,
+            "log": ".rbv/logs/4bc66adb1ad847a699245b0f6b2d18a8/5.log",
+            "log_hash": "4de92a9b8110a452d8ca918d9899acc2fe71c0ea851821f1f49606037b1ea682",
+            "finished_at": 1793243314.2506104,
+            "reused": false,
+            "key": "a06132125bfb647bb0de10d8cd934c7500f05407c0c13b034ce365619b7a83fd"
+          }
+        ],
+        "escalated": true,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": false,
+        "context_hash": null,
+        "elapsed_seconds": 2.7612240000162274,
+        "executed_seconds": 1.7456791000440717,
+        "diagnosis": "Inspect failure logs; distinguish product defects, harness/config errors, and infrastructure. Do not retry unchanged failures or treat a later pass as resolving flakiness.",
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/4bc66adb1ad847a699245b0f6b2d18a8.json"
+      },
+      "detected_defect": true,
+      "missed_known_defect": false,
+      "false_alarm": false,
+      "warmup": null
+    },
+    {
+      "scenario": "pricing_bug",
+      "repetition": 0,
+      "known_defect": true,
+      "baseline_clean": true,
+      "full": {
+        "elapsed_seconds": 2.610783400014043,
+        "results": [
+          {
+            "id": "pricing",
+            "returncode": 1,
+            "duration_seconds": 0.17118359997402877,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<fixture>\\checks.py\", line 11, in <module>\n    assert pricing.price(values) == expected\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+          },
+          {
+            "id": "cart",
+            "returncode": 1,
+            "duration_seconds": 0.1520218999357894,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<fixture>\\checks.py\", line 14, in <module>\n    assert cart.checkout(values) == expected + 5\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+          },
+          {
+            "id": "security",
+            "returncode": 0,
+            "duration_seconds": 0.18858279997948557,
+            "stdout": "{\"group\": \"security\", \"assertions\": 3000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "data",
+            "returncode": 0,
+            "duration_seconds": 1.7523623999441043,
+            "stdout": "{\"group\": \"data\", \"assertions\": 2000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "search",
+            "returncode": 0,
+            "duration_seconds": 0.15893199993297458,
+            "stdout": "{\"group\": \"search\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "loader",
+            "returncode": 0,
+            "duration_seconds": 0.1876589999301359,
+            "stdout": "{\"group\": \"loader\", \"assertions\": 2000}\n",
+            "stderr": ""
+          }
+        ],
+        "detected_defect": true
+      },
+      "selective": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "122e8a7641e74d2bb61b8c958069d6e6",
+        "status": "failed",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "5f815bd39f5414807bf59286805d0fe6a6f8cd86",
+          "snapshot": "5e7d94d29d387b6c78583130053d5d78e5f0cc350bf0880e1d5d3d10c3b4a886",
+          "config_hash": "6936808efa108098f2b21120319ddbba0d9ab40df3adcd2f5660723eec149a4d",
+          "risk": "targeted",
+          "changed": [
+            "src/pricing.py"
+          ],
+          "affected_components": [
+            "cart",
+            "pricing"
+          ],
+          "required_tags": [],
+          "reasons": [],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [],
+          "selected": [
+            {
+              "id": "cart",
+              "command": [
+                "{python}",
+                "checks.py",
+                "cart",
+                "1000"
+              ],
+              "components": [
+                "cart"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "affected components: cart"
+              ]
+            },
+            {
+              "id": "pricing",
+              "command": [
+                "{python}",
+                "checks.py",
+                "pricing",
+                "1000"
+              ],
+              "components": [
+                "pricing",
+                "shared"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "affected components: pricing"
+              ]
+            }
+          ],
+          "skipped": [
+            {
+              "id": "security",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "data",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "search",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "loader",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            }
+          ],
+          "estimated_cost": 2,
+          "full_cost": 11
+        },
+        "results": [
+          {
+            "id": "cart",
+            "status": "failed",
+            "returncode": 1,
+            "diagnosis": "nonzero exit: possible product or test defect; inspect assertions and baseline",
+            "duration_seconds": 0.24647889996413141,
+            "log": ".rbv/logs/122e8a7641e74d2bb61b8c958069d6e6/0.log",
+            "log_hash": "1bd102896cd0ab879dc1fb63a81e696f2716f14217d6e60d46afad2731bf0b6e",
+            "finished_at": 1793243321.620398,
+            "reused": false,
+            "key": "20ea7505bace422fcbbf9d48042cf35964cd3ea184e255a48e98411311cfeb8d"
+          },
+          {
+            "id": "pricing",
+            "status": "failed",
+            "returncode": 1,
+            "diagnosis": "nonzero exit: possible product or test defect; inspect assertions and baseline",
+            "duration_seconds": 0.22235330007970333,
+            "log": ".rbv/logs/122e8a7641e74d2bb61b8c958069d6e6/1.log",
+            "log_hash": "0d1a5fdc00228e0692f7dfeb59470ef6192e44f0f598ef784c1d4f379143fcf3",
+            "finished_at": 1793243321.848897,
+            "reused": false,
+            "key": "b3815ef000e1189ecf95c8daa3e1c6748cfcb776089c75865b1288004e37383b"
+          },
+          {
+            "id": "loader",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.18510779994539917,
+            "log": ".rbv/logs/122e8a7641e74d2bb61b8c958069d6e6/2.log",
+            "log_hash": "cbc7cbd7e3984263b1b7618868b8e5a0fe8af41f9b63340c3766b9e6a6e6849f",
+            "finished_at": 1793243322.038352,
+            "reused": false,
+            "key": "fd6c54cb17eea353fcc82268800f0f408821c10d4615a074ff9b198b6c55e8d8"
+          },
+          {
+            "id": "search",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.15684199996758252,
+            "log": ".rbv/logs/122e8a7641e74d2bb61b8c958069d6e6/3.log",
+            "log_hash": "19bd4518073d10bf9dd5fcf30a2b7a1ac02d88a685d4a1796e46acfca8d8df0e",
+            "finished_at": 1793243322.1997883,
+            "reused": false,
+            "key": "1856ce20c3d6ee502863a56107ae0641bc1b0a4f6f74cb384049601d43aa6a31"
+          },
+          {
+            "id": "security",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.1814210000447929,
+            "log": ".rbv/logs/122e8a7641e74d2bb61b8c958069d6e6/4.log",
+            "log_hash": "eba7f1d1698731339ebe95a716a9ca5d0b269174d197d28a399545b263150c45",
+            "finished_at": 1793243322.3846862,
+            "reused": false,
+            "key": "5b9be2bf7113934c4cdea20c85567108ac07e45e5192099335b87967cc29f5b2"
+          },
+          {
+            "id": "data",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.9265572000294924,
+            "log": ".rbv/logs/122e8a7641e74d2bb61b8c958069d6e6/5.log",
+            "log_hash": "4de92a9b8110a452d8ca918d9899acc2fe71c0ea851821f1f49606037b1ea682",
+            "finished_at": 1793243323.314982,
+            "reused": false,
+            "key": "22cef7df5d7d06fdfe1a8f8d3f86eb113a84f051b401856e692809ae234eba9e"
+          }
+        ],
+        "escalated": true,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": false,
+        "context_hash": null,
+        "elapsed_seconds": 3.239027400035411,
+        "executed_seconds": 1.9187602000311017,
+        "diagnosis": "Inspect failure logs; distinguish product defects, harness/config errors, and infrastructure. Do not retry unchanged failures or treat a later pass as resolving flakiness.",
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/122e8a7641e74d2bb61b8c958069d6e6.json"
+      },
+      "detected_defect": true,
+      "missed_known_defect": false,
+      "false_alarm": false,
+      "warmup": null
+    },
+    {
+      "scenario": "shared_dependency_bug",
+      "repetition": 0,
+      "known_defect": true,
+      "baseline_clean": true,
+      "full": {
+        "elapsed_seconds": 1.4851789999520406,
+        "results": [
+          {
+            "id": "pricing",
+            "returncode": 1,
+            "duration_seconds": 0.14844940009061247,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<fixture>\\checks.py\", line 11, in <module>\n    assert pricing.price(values) == expected\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+          },
+          {
+            "id": "cart",
+            "returncode": 1,
+            "duration_seconds": 0.12767930002883077,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<fixture>\\checks.py\", line 14, in <module>\n    assert cart.checkout(values) == expected + 5\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+          },
+          {
+            "id": "security",
+            "returncode": 0,
+            "duration_seconds": 0.10606380004901439,
+            "stdout": "{\"group\": \"security\", \"assertions\": 3000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "data",
+            "returncode": 0,
+            "duration_seconds": 0.8744884999468923,
+            "stdout": "{\"group\": \"data\", \"assertions\": 2000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "search",
+            "returncode": 0,
+            "duration_seconds": 0.11650440003722906,
+            "stdout": "{\"group\": \"search\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "loader",
+            "returncode": 0,
+            "duration_seconds": 0.1119557999772951,
+            "stdout": "{\"group\": \"loader\", \"assertions\": 2000}\n",
+            "stderr": ""
+          }
+        ],
+        "detected_defect": true
+      },
+      "selective": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "a0e8625aa7a545a7a9d823f6c23ccd78",
+        "status": "failed",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "f0d7fa4342d5d6711c6c85d6a408788e0cff4976",
+          "snapshot": "549d18ab5bbedbfbcadcd969bf74856ae5dd4bfb8e4d081240030eeb8488ebd6",
+          "config_hash": "6936808efa108098f2b21120319ddbba0d9ab40df3adcd2f5660723eec149a4d",
+          "risk": "targeted",
+          "changed": [
+            "src/shared.py"
+          ],
+          "affected_components": [
+            "cart",
+            "pricing",
+            "shared"
+          ],
+          "required_tags": [],
+          "reasons": [],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [],
+          "selected": [
+            {
+              "id": "cart",
+              "command": [
+                "{python}",
+                "checks.py",
+                "cart",
+                "1000"
+              ],
+              "components": [
+                "cart"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "affected components: cart"
+              ]
+            },
+            {
+              "id": "pricing",
+              "command": [
+                "{python}",
+                "checks.py",
+                "pricing",
+                "1000"
+              ],
+              "components": [
+                "pricing",
+                "shared"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "affected components: pricing, shared"
+              ]
+            }
+          ],
+          "skipped": [
+            {
+              "id": "security",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "data",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "search",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "loader",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            }
+          ],
+          "estimated_cost": 2,
+          "full_cost": 11
+        },
+        "results": [
+          {
+            "id": "cart",
+            "status": "failed",
+            "returncode": 1,
+            "diagnosis": "nonzero exit: possible product or test defect; inspect assertions and baseline",
+            "duration_seconds": 0.15780060004908592,
+            "log": ".rbv/logs/a0e8625aa7a545a7a9d823f6c23ccd78/0.log",
+            "log_hash": "f167f9f8af79aeac633e76d1f2fc0a33e09ec0452ba106efc58a7b2240053686",
+            "finished_at": 1793243327.821046,
+            "reused": false,
+            "key": "c3c537728602f770af45c15837fbf356d2d3ee31276d8503cac937751be28c4a"
+          },
+          {
+            "id": "pricing",
+            "status": "failed",
+            "returncode": 1,
+            "diagnosis": "nonzero exit: possible product or test defect; inspect assertions and baseline",
+            "duration_seconds": 0.14878599997609854,
+            "log": ".rbv/logs/a0e8625aa7a545a7a9d823f6c23ccd78/1.log",
+            "log_hash": "9747afafab6083f449c08269bec8cd270e6c7594688e2554007d20dcfa441101",
+            "finished_at": 1793243327.9731774,
+            "reused": false,
+            "key": "f3c9d1780943839a2835716506528219b1d1ff4cc0894ab3ca6fba3557f4c982"
+          },
+          {
+            "id": "loader",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.14928320003673434,
+            "log": ".rbv/logs/a0e8625aa7a545a7a9d823f6c23ccd78/2.log",
+            "log_hash": "cbc7cbd7e3984263b1b7618868b8e5a0fe8af41f9b63340c3766b9e6a6e6849f",
+            "finished_at": 1793243328.1271782,
+            "reused": false,
+            "key": "0474ff833a8c8e89a14c97b3c30981b5913ca69973e769bb0e059793b6a4d847"
+          },
+          {
+            "id": "search",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.15837570000439882,
+            "log": ".rbv/logs/a0e8625aa7a545a7a9d823f6c23ccd78/3.log",
+            "log_hash": "19bd4518073d10bf9dd5fcf30a2b7a1ac02d88a685d4a1796e46acfca8d8df0e",
+            "finished_at": 1793243328.2911608,
+            "reused": false,
+            "key": "ed08e066ec61f505d6f68b626ef5daaf86b942eab3e396670ed5c9b7f0402945"
+          },
+          {
+            "id": "security",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.16026219993364066,
+            "log": ".rbv/logs/a0e8625aa7a545a7a9d823f6c23ccd78/4.log",
+            "log_hash": "eba7f1d1698731339ebe95a716a9ca5d0b269174d197d28a399545b263150c45",
+            "finished_at": 1793243328.4550717,
+            "reused": false,
+            "key": "731a93467dfb213dbf82cb424a576b83fd33fe5ddf53c7a1c06a54ef60c27e34"
+          },
+          {
+            "id": "data",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.725106899975799,
+            "log": ".rbv/logs/a0e8625aa7a545a7a9d823f6c23ccd78/5.log",
+            "log_hash": "4de92a9b8110a452d8ca918d9899acc2fe71c0ea851821f1f49606037b1ea682",
+            "finished_at": 1793243329.1833372,
+            "reused": false,
+            "key": "289c909d12e2ad88a1e90eafc578ea0fff96695b627f33f69af01fa3a4ffddd3"
+          }
+        ],
+        "escalated": true,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": false,
+        "context_hash": null,
+        "elapsed_seconds": 2.282860800041817,
+        "executed_seconds": 1.4996145999757573,
+        "diagnosis": "Inspect failure logs; distinguish product defects, harness/config errors, and infrastructure. Do not retry unchanged failures or treat a later pass as resolving flakiness.",
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/a0e8625aa7a545a7a9d823f6c23ccd78.json"
+      },
+      "detected_defect": true,
+      "missed_known_defect": false,
+      "false_alarm": false,
+      "warmup": null
+    },
+    {
+      "scenario": "tenant_isolation_bug",
+      "repetition": 0,
+      "known_defect": true,
+      "baseline_clean": true,
+      "full": {
+        "elapsed_seconds": 1.396574099897407,
+        "results": [
+          {
+            "id": "pricing",
+            "returncode": 0,
+            "duration_seconds": 0.11058789992239326,
+            "stdout": "{\"group\": \"pricing\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "cart",
+            "returncode": 0,
+            "duration_seconds": 0.11576399998739362,
+            "stdout": "{\"group\": \"cart\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "security",
+            "returncode": 1,
+            "duration_seconds": 0.13567619991954416,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<fixture>\\checks.py\", line 17, in <module>\n    assert not access.allowed({\"tenant\": i, \"role\": \"admin\"}, {\"tenant\": i + 1})\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+          },
+          {
+            "id": "data",
+            "returncode": 0,
+            "duration_seconds": 0.8219355000182986,
+            "stdout": "{\"group\": \"data\", \"assertions\": 2000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "search",
+            "returncode": 0,
+            "duration_seconds": 0.10746650001965463,
+            "stdout": "{\"group\": \"search\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "loader",
+            "returncode": 0,
+            "duration_seconds": 0.10511320002842695,
+            "stdout": "{\"group\": \"loader\", \"assertions\": 2000}\n",
+            "stderr": ""
+          }
+        ],
+        "detected_defect": true
+      },
+      "selective": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "65c0e61673914816bf2e13db5f8a4e09",
+        "status": "failed",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "fe49546a81e2c671d4c50ed7522bcb159bf0d6a3",
+          "snapshot": "e81d810d706397c52fab617836082b8439d04f7aa929d57fb3f68ba4b0b56852",
+          "config_hash": "6936808efa108098f2b21120319ddbba0d9ab40df3adcd2f5660723eec149a4d",
+          "risk": "high",
+          "changed": [
+            "src/access.py"
+          ],
+          "affected_components": [
+            "access"
+          ],
+          "required_tags": [
+            "security"
+          ],
+          "reasons": [
+            "protected rule: tenant isolation (src/access.py)",
+            "high-risk gates require fresh full inventory"
+          ],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [],
+          "selected": [
+            {
+              "id": "security",
+              "command": [
+                "{python}",
+                "checks.py",
+                "security",
+                "1000"
+              ],
+              "components": [
+                "access"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [
+                "security"
+              ],
+              "cost": 2,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "affected components: access",
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "cart",
+              "command": [
+                "{python}",
+                "checks.py",
+                "cart",
+                "1000"
+              ],
+              "components": [
+                "cart"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "loader",
+              "command": [
+                "{python}",
+                "checks.py",
+                "loader",
+                "1000"
+              ],
+              "components": [],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "pricing",
+              "command": [
+                "{python}",
+                "checks.py",
+                "pricing",
+                "1000"
+              ],
+              "components": [
+                "pricing",
+                "shared"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "search",
+              "command": [
+                "{python}",
+                "checks.py",
+                "search",
+                "1000"
+              ],
+              "components": [
+                "search"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "data",
+              "command": [
+                "{python}",
+                "checks.py",
+                "data",
+                "1000"
+              ],
+              "components": [
+                "storage"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [
+                "data"
+              ],
+              "cost": 5,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            }
+          ],
+          "skipped": [],
+          "estimated_cost": 11,
+          "full_cost": 11
+        },
+        "results": [
+          {
+            "id": "security",
+            "status": "failed",
+            "returncode": 1,
+            "diagnosis": "nonzero exit: possible product or test defect; inspect assertions and baseline",
+            "duration_seconds": 0.1567486000712961,
+            "log": ".rbv/logs/65c0e61673914816bf2e13db5f8a4e09/0.log",
+            "log_hash": "eb12b9694741a29433e0cca159dab23f11cecc6313749c2db637d618a22ade67",
+            "finished_at": 1793243333.2693365,
+            "reused": false,
+            "key": "e62329a0627d8ae8dfd4ce0e49e93189b08e03cf92dd8c5668106fa5002b967f"
+          },
+          {
+            "id": "cart",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.12756990001071244,
+            "log": ".rbv/logs/65c0e61673914816bf2e13db5f8a4e09/1.log",
+            "log_hash": "0e7e35753a1222923d19cc2b2a3ced1eb20af3008b5e941bfb6512f5d98d64a3",
+            "finished_at": 1793243333.3996105,
+            "reused": false,
+            "key": "052e75505b941a651d8c7c3a14a80535e2d999ffa558867cd6aa4af36da59062"
+          },
+          {
+            "id": "loader",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.11285689997021109,
+            "log": ".rbv/logs/65c0e61673914816bf2e13db5f8a4e09/2.log",
+            "log_hash": "cbc7cbd7e3984263b1b7618868b8e5a0fe8af41f9b63340c3766b9e6a6e6849f",
+            "finished_at": 1793243333.5154402,
+            "reused": false,
+            "key": "722eb8a705bba231e0bd40a2a011211f14ef95ba6e1cf581e29786f71d9723b1"
+          },
+          {
+            "id": "pricing",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.11883249995298684,
+            "log": ".rbv/logs/65c0e61673914816bf2e13db5f8a4e09/3.log",
+            "log_hash": "4e969717f5a9994cb0215d5a27bc803e0069a3d3a147a4c5af8700a20d5ea265",
+            "finished_at": 1793243333.6369126,
+            "reused": false,
+            "key": "c532f9a6e0a5a7e4d9bd235d4bc5f81a1993bd553c5e1dd30febfbdbec11ef11"
+          },
+          {
+            "id": "search",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.11477899993769825,
+            "log": ".rbv/logs/65c0e61673914816bf2e13db5f8a4e09/4.log",
+            "log_hash": "19bd4518073d10bf9dd5fcf30a2b7a1ac02d88a685d4a1796e46acfca8d8df0e",
+            "finished_at": 1793243333.7545245,
+            "reused": false,
+            "key": "7ab0567ea1392b868e07c1578f083ce13035f48797d6e2d4185c486ce507a9a1"
+          },
+          {
+            "id": "data",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.6193692999659106,
+            "log": ".rbv/logs/65c0e61673914816bf2e13db5f8a4e09/5.log",
+            "log_hash": "4de92a9b8110a452d8ca918d9899acc2fe71c0ea851821f1f49606037b1ea682",
+            "finished_at": 1793243334.376682,
+            "reused": false,
+            "key": "bad970d64525d47d63a1dc240d2aed1fc540e67cb466583053d00d44e83b34cb"
+          }
+        ],
+        "escalated": true,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": false,
+        "context_hash": null,
+        "elapsed_seconds": 2.05104469996877,
+        "executed_seconds": 1.2501561999088153,
+        "diagnosis": "Inspect failure logs; distinguish product defects, harness/config errors, and infrastructure. Do not retry unchanged failures or treat a later pass as resolving flakiness.",
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/65c0e61673914816bf2e13db5f8a4e09.json"
+      },
+      "detected_defect": true,
+      "missed_known_defect": false,
+      "false_alarm": false,
+      "warmup": null
+    },
+    {
+      "scenario": "atomicity_bug",
+      "repetition": 0,
+      "known_defect": true,
+      "baseline_clean": true,
+      "full": {
+        "elapsed_seconds": 0.6582412999123335,
+        "results": [
+          {
+            "id": "pricing",
+            "returncode": 0,
+            "duration_seconds": 0.10443069995380938,
+            "stdout": "{\"group\": \"pricing\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "cart",
+            "returncode": 0,
+            "duration_seconds": 0.11169339995831251,
+            "stdout": "{\"group\": \"cart\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "security",
+            "returncode": 0,
+            "duration_seconds": 0.11511909996625036,
+            "stdout": "{\"group\": \"security\", \"assertions\": 3000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "data",
+            "returncode": 1,
+            "duration_seconds": 0.12121260003186762,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<fixture>\\checks.py\", line 22, in <module>\n    assert storage.transfer(i + 1, i + 2) == [i + 1, 0]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+          },
+          {
+            "id": "search",
+            "returncode": 0,
+            "duration_seconds": 0.09322450007312,
+            "stdout": "{\"group\": \"search\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "loader",
+            "returncode": 0,
+            "duration_seconds": 0.11251610005274415,
+            "stdout": "{\"group\": \"loader\", \"assertions\": 2000}\n",
+            "stderr": ""
+          }
+        ],
+        "detected_defect": true
+      },
+      "selective": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "0f77dc859c78496bbee4bd068ab1cfde",
+        "status": "failed",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "ea16fce5f44d40383b403c8b6bde46bb2ece32a8",
+          "snapshot": "f742b9c8c76a0da76df502bd72055a5b5bb4b3ce16c7774ee9f9cffde144754c",
+          "config_hash": "6936808efa108098f2b21120319ddbba0d9ab40df3adcd2f5660723eec149a4d",
+          "risk": "high",
+          "changed": [
+            "src/storage.py"
+          ],
+          "affected_components": [
+            "storage"
+          ],
+          "required_tags": [
+            "data"
+          ],
+          "reasons": [
+            "protected rule: atomic balances (src/storage.py)",
+            "high-risk gates require fresh full inventory"
+          ],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [],
+          "selected": [
+            {
+              "id": "data",
+              "command": [
+                "{python}",
+                "checks.py",
+                "data",
+                "1000"
+              ],
+              "components": [
+                "storage"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [
+                "data"
+              ],
+              "cost": 5,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "affected components: storage",
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "cart",
+              "command": [
+                "{python}",
+                "checks.py",
+                "cart",
+                "1000"
+              ],
+              "components": [
+                "cart"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "loader",
+              "command": [
+                "{python}",
+                "checks.py",
+                "loader",
+                "1000"
+              ],
+              "components": [],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "pricing",
+              "command": [
+                "{python}",
+                "checks.py",
+                "pricing",
+                "1000"
+              ],
+              "components": [
+                "pricing",
+                "shared"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "search",
+              "command": [
+                "{python}",
+                "checks.py",
+                "search",
+                "1000"
+              ],
+              "components": [
+                "search"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "security",
+              "command": [
+                "{python}",
+                "checks.py",
+                "security",
+                "1000"
+              ],
+              "components": [
+                "access"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [
+                "security"
+              ],
+              "cost": 2,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            }
+          ],
+          "skipped": [],
+          "estimated_cost": 11,
+          "full_cost": 11
+        },
+        "results": [
+          {
+            "id": "data",
+            "status": "failed",
+            "returncode": 1,
+            "diagnosis": "nonzero exit: possible product or test defect; inspect assertions and baseline",
+            "duration_seconds": 0.14182070002425462,
+            "log": ".rbv/logs/0f77dc859c78496bbee4bd068ab1cfde/0.log",
+            "log_hash": "1fa28094ed33026e846bdef9bfa591943e202b69f322d3a490de749b7ffbb818",
+            "finished_at": 1793243337.4622278,
+            "reused": false,
+            "key": "b4722cc439c4e792a72c02c328489f6205cdf298cfe60378b7d2b3ee633712ac"
+          },
+          {
+            "id": "cart",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.11197670002002269,
+            "log": ".rbv/logs/0f77dc859c78496bbee4bd068ab1cfde/1.log",
+            "log_hash": "0e7e35753a1222923d19cc2b2a3ced1eb20af3008b5e941bfb6512f5d98d64a3",
+            "finished_at": 1793243337.5778317,
+            "reused": false,
+            "key": "7a69a0f41ddbb62a35957fdd08d8353b61495315a7435549b07c67eb27535767"
+          },
+          {
+            "id": "loader",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.14562249998562038,
+            "log": ".rbv/logs/0f77dc859c78496bbee4bd068ab1cfde/2.log",
+            "log_hash": "cbc7cbd7e3984263b1b7618868b8e5a0fe8af41f9b63340c3766b9e6a6e6849f",
+            "finished_at": 1793243337.726661,
+            "reused": false,
+            "key": "8048cd0692e3dab989512d4a315a13318dcfa883b7098e932f18757b7222234e"
+          },
+          {
+            "id": "pricing",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.13148320000618696,
+            "log": ".rbv/logs/0f77dc859c78496bbee4bd068ab1cfde/3.log",
+            "log_hash": "4e969717f5a9994cb0215d5a27bc803e0069a3d3a147a4c5af8700a20d5ea265",
+            "finished_at": 1793243337.8609405,
+            "reused": false,
+            "key": "1ba00cd4b16273c9e35743021c0398410c1fb9f81195fdea755e624a92e1a6b8"
+          },
+          {
+            "id": "search",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.12727639998774976,
+            "log": ".rbv/logs/0f77dc859c78496bbee4bd068ab1cfde/4.log",
+            "log_hash": "19bd4518073d10bf9dd5fcf30a2b7a1ac02d88a685d4a1796e46acfca8d8df0e",
+            "finished_at": 1793243337.9908683,
+            "reused": false,
+            "key": "229a3fffc13dff53aa2b406daa874dcd395c713b02af53bc8324e038d262496b"
+          },
+          {
+            "id": "security",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.11781490000430495,
+            "log": ".rbv/logs/0f77dc859c78496bbee4bd068ab1cfde/5.log",
+            "log_hash": "eba7f1d1698731339ebe95a716a9ca5d0b269174d197d28a399545b263150c45",
+            "finished_at": 1793243338.1112082,
+            "reused": false,
+            "key": "898959df4c2a067cf12dab371ad184bae37d7a90218d6faf50f10483724e8b4b"
+          }
+        ],
+        "escalated": true,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": false,
+        "context_hash": null,
+        "elapsed_seconds": 1.5228452000301331,
+        "executed_seconds": 0.7759944000281394,
+        "diagnosis": "Inspect failure logs; distinguish product defects, harness/config errors, and infrastructure. Do not retry unchanged failures or treat a later pass as resolving flakiness.",
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/0f77dc859c78496bbee4bd068ab1cfde.json"
+      },
+      "detected_defect": true,
+      "missed_known_defect": false,
+      "false_alarm": false,
+      "warmup": null
+    },
+    {
+      "scenario": "unmapped_loader_bug",
+      "repetition": 0,
+      "known_defect": true,
+      "baseline_clean": true,
+      "full": {
+        "elapsed_seconds": 1.2836316999746487,
+        "results": [
+          {
+            "id": "pricing",
+            "returncode": 0,
+            "duration_seconds": 0.09500820003449917,
+            "stdout": "{\"group\": \"pricing\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "cart",
+            "returncode": 0,
+            "duration_seconds": 0.0971298998920247,
+            "stdout": "{\"group\": \"cart\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "security",
+            "returncode": 0,
+            "duration_seconds": 0.1191423999844119,
+            "stdout": "{\"group\": \"security\", \"assertions\": 3000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "data",
+            "returncode": 0,
+            "duration_seconds": 0.7329103000229225,
+            "stdout": "{\"group\": \"data\", \"assertions\": 2000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "search",
+            "returncode": 0,
+            "duration_seconds": 0.11274770007003099,
+            "stdout": "{\"group\": \"search\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "loader",
+            "returncode": 1,
+            "duration_seconds": 0.12666269997134805,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<fixture>\\checks.py\", line 30, in <module>\n    assert not loader.enabled('{\"enabled\":\"false\"}')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+          }
+        ],
+        "detected_defect": true
+      },
+      "selective": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "af955bc529bf4885a11b9a71f4fcedd0",
+        "status": "failed",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "110caad690435b1ffe2ecd74835658dcd2905e2f",
+          "snapshot": "52d088f37d7b56a701773b5660d5587adebaa0de308190f92d58d94e9ae6518d",
+          "config_hash": "6936808efa108098f2b21120319ddbba0d9ab40df3adcd2f5660723eec149a4d",
+          "risk": "conservative",
+          "changed": [
+            "src/loader.py"
+          ],
+          "affected_components": [],
+          "required_tags": [],
+          "reasons": [
+            "unmapped changes: src/loader.py"
+          ],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [],
+          "selected": [
+            {
+              "id": "cart",
+              "command": [
+                "{python}",
+                "checks.py",
+                "cart",
+                "1000"
+              ],
+              "components": [
+                "cart"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "loader",
+              "command": [
+                "{python}",
+                "checks.py",
+                "loader",
+                "1000"
+              ],
+              "components": [],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "pricing",
+              "command": [
+                "{python}",
+                "checks.py",
+                "pricing",
+                "1000"
+              ],
+              "components": [
+                "pricing",
+                "shared"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "search",
+              "command": [
+                "{python}",
+                "checks.py",
+                "search",
+                "1000"
+              ],
+              "components": [
+                "search"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "security",
+              "command": [
+                "{python}",
+                "checks.py",
+                "security",
+                "1000"
+              ],
+              "components": [
+                "access"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [
+                "security"
+              ],
+              "cost": 2,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "data",
+              "command": [
+                "{python}",
+                "checks.py",
+                "data",
+                "1000"
+              ],
+              "components": [
+                "storage"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [
+                "data"
+              ],
+              "cost": 5,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            }
+          ],
+          "skipped": [],
+          "estimated_cost": 11,
+          "full_cost": 11
+        },
+        "results": [
+          {
+            "id": "cart",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.1194215000141412,
+            "log": ".rbv/logs/af955bc529bf4885a11b9a71f4fcedd0/0.log",
+            "log_hash": "0e7e35753a1222923d19cc2b2a3ced1eb20af3008b5e941bfb6512f5d98d64a3",
+            "finished_at": 1793243341.7643788,
+            "reused": false,
+            "key": "6d669965f42d9daf8abbd4c5994ad224cdbb0b59a83e4c468012af70e70c76eb"
+          },
+          {
+            "id": "loader",
+            "status": "failed",
+            "returncode": 1,
+            "diagnosis": "nonzero exit: possible product or test defect; inspect assertions and baseline",
+            "duration_seconds": 0.14481129997875541,
+            "log": ".rbv/logs/af955bc529bf4885a11b9a71f4fcedd0/1.log",
+            "log_hash": "cc81b6733e9a9e99b9fe1997f998c5f539486ea5fee039e93f5403f2bde1f3a6",
+            "finished_at": 1793243341.9122407,
+            "reused": false,
+            "key": "9a733c4ce265220df987895f9fef0a73ff77d439fe73a04b74c71c601c9f6646"
+          },
+          {
+            "id": "pricing",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.10471589991357177,
+            "log": ".rbv/logs/af955bc529bf4885a11b9a71f4fcedd0/2.log",
+            "log_hash": "4e969717f5a9994cb0215d5a27bc803e0069a3d3a147a4c5af8700a20d5ea265",
+            "finished_at": 1793243342.0201838,
+            "reused": false,
+            "key": "526b0110c67a027ff4ecaa672428e15d3b6950b6a2ec5dd900a5fb70c647b6a5"
+          },
+          {
+            "id": "search",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.10682820004876703,
+            "log": ".rbv/logs/af955bc529bf4885a11b9a71f4fcedd0/3.log",
+            "log_hash": "19bd4518073d10bf9dd5fcf30a2b7a1ac02d88a685d4a1796e46acfca8d8df0e",
+            "finished_at": 1793243342.129844,
+            "reused": false,
+            "key": "ec219e6f3ab4ab2f1e03feb3e59ae74183335c8e246899b041dac4541b677e49"
+          },
+          {
+            "id": "security",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.11522739997599274,
+            "log": ".rbv/logs/af955bc529bf4885a11b9a71f4fcedd0/4.log",
+            "log_hash": "eba7f1d1698731339ebe95a716a9ca5d0b269174d197d28a399545b263150c45",
+            "finished_at": 1793243342.2478452,
+            "reused": false,
+            "key": "d8616797804c15aadfc3f1e527c0e261c1f7da73d8ce887d3c1104088b7b54c0"
+          },
+          {
+            "id": "data",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.6920143000315875,
+            "log": ".rbv/logs/af955bc529bf4885a11b9a71f4fcedd0/5.log",
+            "log_hash": "4de92a9b8110a452d8ca918d9899acc2fe71c0ea851821f1f49606037b1ea682",
+            "finished_at": 1793243342.9423318,
+            "reused": false,
+            "key": "11b994eb86fb0599b6d5d17989573872277ec8b3dc674066078a6a6f635747e7"
+          }
+        ],
+        "escalated": true,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": false,
+        "context_hash": null,
+        "elapsed_seconds": 1.99700670002494,
+        "executed_seconds": 1.2830185999628156,
+        "diagnosis": "Inspect failure logs; distinguish product defects, harness/config errors, and infrastructure. Do not retry unchanged failures or treat a later pass as resolving flakiness.",
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/af955bc529bf4885a11b9a71f4fcedd0.json"
+      },
+      "detected_defect": true,
+      "missed_known_defect": false,
+      "false_alarm": false,
+      "warmup": null
+    },
+    {
+      "scenario": "dependency_lock_change",
+      "repetition": 0,
+      "known_defect": false,
+      "baseline_clean": true,
+      "full": {
+        "elapsed_seconds": 1.141593600041233,
+        "results": [
+          {
+            "id": "pricing",
+            "returncode": 0,
+            "duration_seconds": 0.09394269995391369,
+            "stdout": "{\"group\": \"pricing\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "cart",
+            "returncode": 0,
+            "duration_seconds": 0.08844459999818355,
+            "stdout": "{\"group\": \"cart\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "security",
+            "returncode": 0,
+            "duration_seconds": 0.09179239999502897,
+            "stdout": "{\"group\": \"security\", \"assertions\": 3000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "data",
+            "returncode": 0,
+            "duration_seconds": 0.663189799990505,
+            "stdout": "{\"group\": \"data\", \"assertions\": 2000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "search",
+            "returncode": 0,
+            "duration_seconds": 0.10074789996724576,
+            "stdout": "{\"group\": \"search\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "loader",
+            "returncode": 0,
+            "duration_seconds": 0.10344830004032701,
+            "stdout": "{\"group\": \"loader\", \"assertions\": 2000}\n",
+            "stderr": ""
+          }
+        ],
+        "detected_defect": false
+      },
+      "selective": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "1318c1ebfdbe4002a7ac582be4050e02",
+        "status": "passed",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "78c847cdea7c78e6392eb720b942a74305d8ffd1",
+          "snapshot": "c5e65f0e6756055c2fd12cf9dbecf6c486e3437db5a058d8a338d5db990f9b94",
+          "config_hash": "6936808efa108098f2b21120319ddbba0d9ab40df3adcd2f5660723eec149a4d",
+          "risk": "conservative",
+          "changed": [
+            "requirements.lock"
+          ],
+          "affected_components": [],
+          "required_tags": [],
+          "reasons": [
+            "global/build/policy input: requirements.lock"
+          ],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [],
+          "selected": [
+            {
+              "id": "cart",
+              "command": [
+                "{python}",
+                "checks.py",
+                "cart",
+                "1000"
+              ],
+              "components": [
+                "cart"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "loader",
+              "command": [
+                "{python}",
+                "checks.py",
+                "loader",
+                "1000"
+              ],
+              "components": [],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "pricing",
+              "command": [
+                "{python}",
+                "checks.py",
+                "pricing",
+                "1000"
+              ],
+              "components": [
+                "pricing",
+                "shared"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "search",
+              "command": [
+                "{python}",
+                "checks.py",
+                "search",
+                "1000"
+              ],
+              "components": [
+                "search"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "security",
+              "command": [
+                "{python}",
+                "checks.py",
+                "security",
+                "1000"
+              ],
+              "components": [
+                "access"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [
+                "security"
+              ],
+              "cost": 2,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "data",
+              "command": [
+                "{python}",
+                "checks.py",
+                "data",
+                "1000"
+              ],
+              "components": [
+                "storage"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [
+                "data"
+              ],
+              "cost": 5,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            }
+          ],
+          "skipped": [],
+          "estimated_cost": 11,
+          "full_cost": 11
+        },
+        "results": [
+          {
+            "id": "cart",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.12203919992316514,
+            "log": ".rbv/logs/1318c1ebfdbe4002a7ac582be4050e02/0.log",
+            "log_hash": "0e7e35753a1222923d19cc2b2a3ced1eb20af3008b5e941bfb6512f5d98d64a3",
+            "finished_at": 1793243346.4623268,
+            "reused": false,
+            "key": "2c86937f344e263698217f59a536efe4a2c7a36a778796d848bc735e7a89fb5f"
+          },
+          {
+            "id": "loader",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.1141245000762865,
+            "log": ".rbv/logs/1318c1ebfdbe4002a7ac582be4050e02/1.log",
+            "log_hash": "cbc7cbd7e3984263b1b7618868b8e5a0fe8af41f9b63340c3766b9e6a6e6849f",
+            "finished_at": 1793243346.5798922,
+            "reused": false,
+            "key": "0dfc756a4b08d02e69f15eee89920bf94170198bb8b773abd4dc2c3db8704a63"
+          },
+          {
+            "id": "pricing",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.132316300063394,
+            "log": ".rbv/logs/1318c1ebfdbe4002a7ac582be4050e02/2.log",
+            "log_hash": "4e969717f5a9994cb0215d5a27bc803e0069a3d3a147a4c5af8700a20d5ea265",
+            "finished_at": 1793243346.714903,
+            "reused": false,
+            "key": "fc2e1e38aebde92d151574b6a6b659e381032118362667eca0d5f8614aed91fc"
+          },
+          {
+            "id": "search",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.12499579996801913,
+            "log": ".rbv/logs/1318c1ebfdbe4002a7ac582be4050e02/3.log",
+            "log_hash": "19bd4518073d10bf9dd5fcf30a2b7a1ac02d88a685d4a1796e46acfca8d8df0e",
+            "finished_at": 1793243346.8433669,
+            "reused": false,
+            "key": "03a8dd091c992b6422d9d3756048146011e486a0477d8f9a6d09e1db6750ecf3"
+          },
+          {
+            "id": "security",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.12866930000018328,
+            "log": ".rbv/logs/1318c1ebfdbe4002a7ac582be4050e02/4.log",
+            "log_hash": "eba7f1d1698731339ebe95a716a9ca5d0b269174d197d28a399545b263150c45",
+            "finished_at": 1793243346.9751635,
+            "reused": false,
+            "key": "145760839a95bb60bb0d1d2f1befdfe258a3ab1898b3543f155aa2bd85c48c0f"
+          },
+          {
+            "id": "data",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.6998434000415727,
+            "log": ".rbv/logs/1318c1ebfdbe4002a7ac582be4050e02/5.log",
+            "log_hash": "4de92a9b8110a452d8ca918d9899acc2fe71c0ea851821f1f49606037b1ea682",
+            "finished_at": 1793243347.6776693,
+            "reused": false,
+            "key": "3c3a265d07d3a991889deff1bc017a73ea5aedf935c770239ff3370b16109f24"
+          }
+        ],
+        "escalated": false,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": false,
+        "context_hash": null,
+        "elapsed_seconds": 2.027730799978599,
+        "executed_seconds": 1.3219885000726208,
+        "diagnosis": null,
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/1318c1ebfdbe4002a7ac582be4050e02.json"
+      },
+      "detected_defect": false,
+      "missed_known_defect": false,
+      "false_alarm": false,
+      "warmup": null
+    },
+    {
+      "scenario": "deleted_component",
+      "repetition": 0,
+      "known_defect": true,
+      "baseline_clean": true,
+      "full": {
+        "elapsed_seconds": 0.6523092000279576,
+        "results": [
+          {
+            "id": "pricing",
+            "returncode": 1,
+            "duration_seconds": 0.10731979995034635,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<fixture>\\checks.py\", line 3, in <module>\n    from src import pricing, cart, access, storage, search, loader\nImportError: cannot import name 'search' from 'src' (<fixture>\\src\\__init__.py)\n"
+          },
+          {
+            "id": "cart",
+            "returncode": 1,
+            "duration_seconds": 0.10959789995104074,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<fixture>\\checks.py\", line 3, in <module>\n    from src import pricing, cart, access, storage, search, loader\nImportError: cannot import name 'search' from 'src' (<fixture>\\src\\__init__.py)\n"
+          },
+          {
+            "id": "security",
+            "returncode": 1,
+            "duration_seconds": 0.10228039999492466,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<fixture>\\checks.py\", line 3, in <module>\n    from src import pricing, cart, access, storage, search, loader\nImportError: cannot import name 'search' from 'src' (<fixture>\\src\\__init__.py)\n"
+          },
+          {
+            "id": "data",
+            "returncode": 1,
+            "duration_seconds": 0.10246539989020675,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<fixture>\\checks.py\", line 3, in <module>\n    from src import pricing, cart, access, storage, search, loader\nImportError: cannot import name 'search' from 'src' (<fixture>\\src\\__init__.py)\n"
+          },
+          {
+            "id": "search",
+            "returncode": 1,
+            "duration_seconds": 0.11520140001084656,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<fixture>\\checks.py\", line 3, in <module>\n    from src import pricing, cart, access, storage, search, loader\nImportError: cannot import name 'search' from 'src' (<fixture>\\src\\__init__.py)\n"
+          },
+          {
+            "id": "loader",
+            "returncode": 1,
+            "duration_seconds": 0.1154051999328658,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<fixture>\\checks.py\", line 3, in <module>\n    from src import pricing, cart, access, storage, search, loader\nImportError: cannot import name 'search' from 'src' (<fixture>\\src\\__init__.py)\n"
+          }
+        ],
+        "detected_defect": true
+      },
+      "selective": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "23e5d30520d24957b058fe01548144c3",
+        "status": "failed",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "9521b6a2d065dd837b8504e6830c1266630023f3",
+          "snapshot": "75557305bee3be72ac422f860c00a37a84b9b982ac9535ae1e5bf9372a2029e3",
+          "config_hash": "6936808efa108098f2b21120319ddbba0d9ab40df3adcd2f5660723eec149a4d",
+          "risk": "targeted",
+          "changed": [
+            "src/search.py"
+          ],
+          "affected_components": [
+            "search"
+          ],
+          "required_tags": [],
+          "reasons": [],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [],
+          "selected": [
+            {
+              "id": "search",
+              "command": [
+                "{python}",
+                "checks.py",
+                "search",
+                "1000"
+              ],
+              "components": [
+                "search"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "affected components: search"
+              ]
+            }
+          ],
+          "skipped": [
+            {
+              "id": "pricing",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "cart",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "security",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "data",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "loader",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            }
+          ],
+          "estimated_cost": 1,
+          "full_cost": 11
+        },
+        "results": [
+          {
+            "id": "search",
+            "status": "failed",
+            "returncode": 1,
+            "diagnosis": "nonzero exit: possible product or test defect; inspect assertions and baseline",
+            "duration_seconds": 0.1404497999465093,
+            "log": ".rbv/logs/23e5d30520d24957b058fe01548144c3/0.log",
+            "log_hash": "00181f1fe4c3ef2779754bf394ea8a019aa6c3db349f87893f49de166b092a8a",
+            "finished_at": 1793243350.8085306,
+            "reused": false,
+            "key": "fe16a957b861088e1856ed8d1cc96f76ad06178733c19dd1a0edd785538ead76"
+          },
+          {
+            "id": "cart",
+            "status": "failed",
+            "returncode": 1,
+            "diagnosis": "nonzero exit: possible product or test defect; inspect assertions and baseline",
+            "duration_seconds": 0.13684570009354502,
+            "log": ".rbv/logs/23e5d30520d24957b058fe01548144c3/1.log",
+            "log_hash": "00181f1fe4c3ef2779754bf394ea8a019aa6c3db349f87893f49de166b092a8a",
+            "finished_at": 1793243350.9479058,
+            "reused": false,
+            "key": "fec0768491c17d8fefabc85bbfdce8e6557d9c30f07bf7547976bc0087b8dff0"
+          },
+          {
+            "id": "loader",
+            "status": "failed",
+            "returncode": 1,
+            "diagnosis": "nonzero exit: possible product or test defect; inspect assertions and baseline",
+            "duration_seconds": 0.1366558000445366,
+            "log": ".rbv/logs/23e5d30520d24957b058fe01548144c3/2.log",
+            "log_hash": "00181f1fe4c3ef2779754bf394ea8a019aa6c3db349f87893f49de166b092a8a",
+            "finished_at": 1793243351.0874343,
+            "reused": false,
+            "key": "8ed094a3179775881a61c74d84cc9fd8a345a1410d56fe18705175c3594d41d2"
+          },
+          {
+            "id": "pricing",
+            "status": "failed",
+            "returncode": 1,
+            "diagnosis": "nonzero exit: possible product or test defect; inspect assertions and baseline",
+            "duration_seconds": 0.12795130000449717,
+            "log": ".rbv/logs/23e5d30520d24957b058fe01548144c3/3.log",
+            "log_hash": "00181f1fe4c3ef2779754bf394ea8a019aa6c3db349f87893f49de166b092a8a",
+            "finished_at": 1793243351.2185884,
+            "reused": false,
+            "key": "edc34f733e7714bb240e029ceb37fb9d829b0a70f3e2d321edf2f489fa381a56"
+          },
+          {
+            "id": "security",
+            "status": "failed",
+            "returncode": 1,
+            "diagnosis": "nonzero exit: possible product or test defect; inspect assertions and baseline",
+            "duration_seconds": 0.1379002999747172,
+            "log": ".rbv/logs/23e5d30520d24957b058fe01548144c3/4.log",
+            "log_hash": "00181f1fe4c3ef2779754bf394ea8a019aa6c3db349f87893f49de166b092a8a",
+            "finished_at": 1793243351.3594513,
+            "reused": false,
+            "key": "d3e43da67bb5e1f4200ff9fed31d47aaa41aaca51503ef0ff7e9d13ee52a6117"
+          },
+          {
+            "id": "data",
+            "status": "failed",
+            "returncode": 1,
+            "diagnosis": "nonzero exit: possible product or test defect; inspect assertions and baseline",
+            "duration_seconds": 0.1439126000041142,
+            "log": ".rbv/logs/23e5d30520d24957b058fe01548144c3/5.log",
+            "log_hash": "00181f1fe4c3ef2779754bf394ea8a019aa6c3db349f87893f49de166b092a8a",
+            "finished_at": 1793243351.5063622,
+            "reused": false,
+            "key": "9c2d638f3e5f16b30b936212014ea2dcb3b08ca4665d00478146bc172538cab3"
+          }
+        ],
+        "escalated": true,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": false,
+        "context_hash": null,
+        "elapsed_seconds": 1.6617182999616489,
+        "executed_seconds": 0.8237155000679195,
+        "diagnosis": "Inspect failure logs; distinguish product defects, harness/config errors, and infrastructure. Do not retry unchanged failures or treat a later pass as resolving flakiness.",
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/23e5d30520d24957b058fe01548144c3.json"
+      },
+      "detected_defect": true,
+      "missed_known_defect": false,
+      "false_alarm": false,
+      "warmup": null
+    },
+    {
+      "scenario": "unreviewed_mapping",
+      "repetition": 0,
+      "known_defect": true,
+      "baseline_clean": true,
+      "full": {
+        "elapsed_seconds": 1.1431293999776244,
+        "results": [
+          {
+            "id": "pricing",
+            "returncode": 0,
+            "duration_seconds": 0.11493190005421638,
+            "stdout": "{\"group\": \"pricing\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "cart",
+            "returncode": 0,
+            "duration_seconds": 0.09982980007771403,
+            "stdout": "{\"group\": \"cart\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "security",
+            "returncode": 0,
+            "duration_seconds": 0.09717250009998679,
+            "stdout": "{\"group\": \"security\", \"assertions\": 3000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "data",
+            "returncode": 0,
+            "duration_seconds": 0.6273100000107661,
+            "stdout": "{\"group\": \"data\", \"assertions\": 2000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "search",
+            "returncode": 1,
+            "duration_seconds": 0.10209980001673102,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"<fixture>\\checks.py\", line 27, in <module>\n    assert search.find(\"stra\\xdfe\", items) == [\"STRASSE\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+          },
+          {
+            "id": "loader",
+            "returncode": 0,
+            "duration_seconds": 0.10170940007083118,
+            "stdout": "{\"group\": \"loader\", \"assertions\": 2000}\n",
+            "stderr": ""
+          }
+        ],
+        "detected_defect": true
+      },
+      "selective": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "cc2857e54c4444508063f8de3497c72e",
+        "status": "failed",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "86181fe5f1b7237bf9118290fc1a0b793c20f917",
+          "snapshot": "78c88d7a9879cba0520b9026346fd37ff3984effa19c0ca6e97c599570980905",
+          "config_hash": "c3bb69590e0320a953d75848bcb2e84230834bdf523d609b9606b3e4d878313a",
+          "risk": "conservative",
+          "changed": [
+            "src/search.py"
+          ],
+          "affected_components": [
+            "search"
+          ],
+          "required_tags": [],
+          "reasons": [
+            "impact mapping has not been reviewed"
+          ],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [],
+          "selected": [
+            {
+              "id": "cart",
+              "command": [
+                "{python}",
+                "checks.py",
+                "cart",
+                "1000"
+              ],
+              "components": [
+                "cart"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "loader",
+              "command": [
+                "{python}",
+                "checks.py",
+                "loader",
+                "1000"
+              ],
+              "components": [],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "pricing",
+              "command": [
+                "{python}",
+                "checks.py",
+                "pricing",
+                "1000"
+              ],
+              "components": [
+                "pricing",
+                "shared"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "search",
+              "command": [
+                "{python}",
+                "checks.py",
+                "search",
+                "1000"
+              ],
+              "components": [
+                "search"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "affected components: search",
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "security",
+              "command": [
+                "{python}",
+                "checks.py",
+                "security",
+                "1000"
+              ],
+              "components": [
+                "access"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [
+                "security"
+              ],
+              "cost": 2,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            },
+            {
+              "id": "data",
+              "command": [
+                "{python}",
+                "checks.py",
+                "data",
+                "1000"
+              ],
+              "components": [
+                "storage"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [
+                "data"
+              ],
+              "cost": 5,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "conservative full inventory"
+              ]
+            }
+          ],
+          "skipped": [],
+          "estimated_cost": 11,
+          "full_cost": 11
+        },
+        "results": [
+          {
+            "id": "cart",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.1287157000042498,
+            "log": ".rbv/logs/cc2857e54c4444508063f8de3497c72e/0.log",
+            "log_hash": "0e7e35753a1222923d19cc2b2a3ced1eb20af3008b5e941bfb6512f5d98d64a3",
+            "finished_at": 1793243355.3628933,
+            "reused": false,
+            "key": "8546cbc59152b3aa926fbf83cbec5c0f5c3d77cfa9c150fb8521b4484ce51b63"
+          },
+          {
+            "id": "loader",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.14089359994977713,
+            "log": ".rbv/logs/cc2857e54c4444508063f8de3497c72e/1.log",
+            "log_hash": "cbc7cbd7e3984263b1b7618868b8e5a0fe8af41f9b63340c3766b9e6a6e6849f",
+            "finished_at": 1793243355.507788,
+            "reused": false,
+            "key": "65be2ffced150bc27c061ecdc66d68a5d519d97b5d675aa465bfad007f773e78"
+          },
+          {
+            "id": "pricing",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.1278186000417918,
+            "log": ".rbv/logs/cc2857e54c4444508063f8de3497c72e/2.log",
+            "log_hash": "4e969717f5a9994cb0215d5a27bc803e0069a3d3a147a4c5af8700a20d5ea265",
+            "finished_at": 1793243355.6406093,
+            "reused": false,
+            "key": "224990f4a3be89dc8fe0409ece909fbc4094c56f9f1becf97fb4dab4aa6471dd"
+          },
+          {
+            "id": "search",
+            "status": "failed",
+            "returncode": 1,
+            "diagnosis": "nonzero exit: possible product or test defect; inspect assertions and baseline",
+            "duration_seconds": 0.15855509997345507,
+            "log": ".rbv/logs/cc2857e54c4444508063f8de3497c72e/3.log",
+            "log_hash": "ad709d7a7ec01172397b4c87ebd1b61e42ba991bc1c9b990dc318d0ee1e00d04",
+            "finished_at": 1793243355.8025358,
+            "reused": false,
+            "key": "911a22b62b93e88527a408197feb438d9096ba7ed460914c261c2b05f9e99dd4"
+          },
+          {
+            "id": "security",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.12048990000039339,
+            "log": ".rbv/logs/cc2857e54c4444508063f8de3497c72e/4.log",
+            "log_hash": "eba7f1d1698731339ebe95a716a9ca5d0b269174d197d28a399545b263150c45",
+            "finished_at": 1793243355.9265378,
+            "reused": false,
+            "key": "a98dab258bb1798a8cc3896ee6e74b251bfb3d1572576d326cf2f74c6f4e3947"
+          },
+          {
+            "id": "data",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.742441900074482,
+            "log": ".rbv/logs/cc2857e54c4444508063f8de3497c72e/5.log",
+            "log_hash": "4de92a9b8110a452d8ca918d9899acc2fe71c0ea851821f1f49606037b1ea682",
+            "finished_at": 1793243356.672714,
+            "reused": false,
+            "key": "3dfeded85d6844a9556c684f09db82ad23502d0625133c308eebfbf656fdfe06"
+          }
+        ],
+        "escalated": true,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": false,
+        "context_hash": null,
+        "elapsed_seconds": 2.1893885999452323,
+        "executed_seconds": 1.4189148000441492,
+        "diagnosis": "Inspect failure logs; distinguish product defects, harness/config errors, and infrastructure. Do not retry unchanged failures or treat a later pass as resolving flakiness.",
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/cc2857e54c4444508063f8de3497c72e.json"
+      },
+      "detected_defect": true,
+      "missed_known_defect": false,
+      "false_alarm": false,
+      "warmup": null
+    },
+    {
+      "scenario": "repeat_identical_state",
+      "repetition": 0,
+      "known_defect": false,
+      "baseline_clean": true,
+      "full": {
+        "elapsed_seconds": 1.5708912999834865,
+        "results": [
+          {
+            "id": "pricing",
+            "returncode": 0,
+            "duration_seconds": 0.10769600002095103,
+            "stdout": "{\"group\": \"pricing\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "cart",
+            "returncode": 0,
+            "duration_seconds": 0.11194409988820553,
+            "stdout": "{\"group\": \"cart\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "security",
+            "returncode": 0,
+            "duration_seconds": 0.12319650000426918,
+            "stdout": "{\"group\": \"security\", \"assertions\": 3000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "data",
+            "returncode": 0,
+            "duration_seconds": 0.9761458999710158,
+            "stdout": "{\"group\": \"data\", \"assertions\": 2000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "search",
+            "returncode": 0,
+            "duration_seconds": 0.12273920001462102,
+            "stdout": "{\"group\": \"search\", \"assertions\": 1000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "loader",
+            "returncode": 0,
+            "duration_seconds": 0.12913940008729696,
+            "stdout": "{\"group\": \"loader\", \"assertions\": 2000}\n",
+            "stderr": ""
+          }
+        ],
+        "detected_defect": false
+      },
+      "selective": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "d8f0e62eeb034b91bde6622abbc9c7ce",
+        "status": "passed",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "4af8b813648b17805fb3bf3aaea8abd5a4e387a3",
+          "snapshot": "544ddb42c8de72f63227e3173d4e2ab60066e4475f8d41e596d92ee67c377376",
+          "config_hash": "6936808efa108098f2b21120319ddbba0d9ab40df3adcd2f5660723eec149a4d",
+          "risk": "targeted",
+          "changed": [
+            "src/search.py"
+          ],
+          "affected_components": [
+            "search"
+          ],
+          "required_tags": [],
+          "reasons": [],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [],
+          "selected": [
+            {
+              "id": "search",
+              "command": [
+                "{python}",
+                "checks.py",
+                "search",
+                "1000"
+              ],
+              "components": [
+                "search"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "affected components: search"
+              ]
+            }
+          ],
+          "skipped": [
+            {
+              "id": "pricing",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "cart",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "security",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "data",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "loader",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            }
+          ],
+          "estimated_cost": 1,
+          "full_cost": 11
+        },
+        "results": [
+          {
+            "id": "search",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0,
+            "log": ".rbv/logs/17437cfe434e40ca876f16b1bfa34677/0.log",
+            "log_hash": "19bd4518073d10bf9dd5fcf30a2b7a1ac02d88a685d4a1796e46acfca8d8df0e",
+            "finished_at": 1793243359.4163077,
+            "reused": true,
+            "key": "14a229708a0ea9eb2c21af6fca888da3a844953186c0eb6d105c574199ec45bd",
+            "original_duration_seconds": 0.15370739996433258
+          }
+        ],
+        "escalated": false,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": true,
+        "context_hash": "7f1bdab97269356e73a0007046bdda81948eac24d03d09f239641f0ee61cfb32",
+        "elapsed_seconds": 0.8120866999961436,
+        "executed_seconds": 0,
+        "diagnosis": null,
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/d8f0e62eeb034b91bde6622abbc9c7ce.json"
+      },
+      "detected_defect": false,
+      "missed_known_defect": false,
+      "false_alarm": false,
+      "warmup": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "17437cfe434e40ca876f16b1bfa34677",
+        "status": "passed",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "4af8b813648b17805fb3bf3aaea8abd5a4e387a3",
+          "snapshot": "544ddb42c8de72f63227e3173d4e2ab60066e4475f8d41e596d92ee67c377376",
+          "config_hash": "6936808efa108098f2b21120319ddbba0d9ab40df3adcd2f5660723eec149a4d",
+          "risk": "targeted",
+          "changed": [
+            "src/search.py"
+          ],
+          "affected_components": [
+            "search"
+          ],
+          "required_tags": [],
+          "reasons": [],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [],
+          "selected": [
+            {
+              "id": "search",
+              "command": [
+                "{python}",
+                "checks.py",
+                "search",
+                "1000"
+              ],
+              "components": [
+                "search"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "affected components: search"
+              ]
+            }
+          ],
+          "skipped": [
+            {
+              "id": "pricing",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "cart",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "security",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "data",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "loader",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            }
+          ],
+          "estimated_cost": 1,
+          "full_cost": 11
+        },
+        "results": [
+          {
+            "id": "search",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.15370739996433258,
+            "log": ".rbv/logs/17437cfe434e40ca876f16b1bfa34677/0.log",
+            "log_hash": "19bd4518073d10bf9dd5fcf30a2b7a1ac02d88a685d4a1796e46acfca8d8df0e",
+            "finished_at": 1793243359.4163077,
+            "reused": false,
+            "key": "14a229708a0ea9eb2c21af6fca888da3a844953186c0eb6d105c574199ec45bd"
+          }
+        ],
+        "escalated": false,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": true,
+        "context_hash": "7f1bdab97269356e73a0007046bdda81948eac24d03d09f239641f0ee61cfb32",
+        "elapsed_seconds": 1.0099428999237716,
+        "executed_seconds": 0.15370739996433258,
+        "diagnosis": null,
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/17437cfe434e40ca876f16b1bfa34677.json"
+      }
+    }
+  ]
+}

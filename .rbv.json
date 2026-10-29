@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "impact_reviewed": true,
+  "docs": ["README*.md", "docs/*.md", "CONTRIBUTING.md", "SECURITY.md", "LICENSE", "skills/risk-based-validation/LICENSE", "benchmarks/results/*"],
+  "components": {
+    "config": {"paths": ["skills/risk-based-validation/scripts/rbv/config.py"]},
+    "repository": {"paths": ["skills/risk-based-validation/scripts/rbv/repository.py"], "depends_on": ["config"]},
+    "planner": {"paths": ["skills/risk-based-validation/scripts/rbv/planner.py"], "depends_on": ["config", "repository"]},
+    "runner": {"paths": ["skills/risk-based-validation/scripts/rbv/runner.py"], "depends_on": ["planner", "repository", "config"]},
+    "cli": {"paths": ["skills/risk-based-validation/scripts/rbv/cli.py", "skills/risk-based-validation/scripts/validate.py", "skills/risk-based-validation/scripts/rbv/__init__.py"], "depends_on": ["runner"]},
+    "distribution": {"paths": ["tools/*", "skills/risk-based-validation/SKILL.md", "skills/risk-based-validation/agents/*", "skills/risk-based-validation/references/*", "examples/*"]},
+    "benchmark": {"paths": ["benchmarks/*.py"], "depends_on": ["runner"]}
+  },
+  "tests": [
+    {"id": "selection", "command": ["{python}", "-m", "unittest", "tests.test_selection", "-v"], "components": ["config", "repository", "planner"], "inputs": ["tests/test_selection.py", "tests/support.py", "tests/__init__.py"], "tags": ["security", "data"], "cost": 20},
+    {"id": "execution", "command": ["{python}", "-m", "unittest", "tests.test_execution", "tests.test_boundaries", "-v"], "components": ["runner", "repository", "config"], "inputs": ["tests/test_execution.py", "tests/test_boundaries.py", "tests/support.py", "tests/__init__.py"], "tags": ["security", "data"], "cost": 30},
+    {"id": "cli", "command": ["{python}", "-m", "unittest", "tests.test_cli", "-v"], "components": ["cli"], "inputs": ["tests/test_cli.py", "tests/support.py", "tests/__init__.py"], "cost": 10},
+    {"id": "distribution", "command": ["{python}", "-m", "unittest", "tests.test_distribution", "-v"], "components": ["distribution"], "inputs": ["tests/test_distribution.py"], "cost": 3},
+    {"id": "benchmark", "command": ["{python}", "-m", "benchmarks.evaluate", "--output", ".rbv/benchmark.json"], "components": ["benchmark"], "cost": 90}
+  ]
+}

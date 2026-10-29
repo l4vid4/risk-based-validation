@@ -1,0 +1,4 @@
+interface:
+  display_name: "Risk-based Validation"
+  short_description: "Match verification effort to change risk"
+  default_prompt: "Use $risk-based-validation to select and run proportionate verification for the current changes."

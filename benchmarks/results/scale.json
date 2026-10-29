@@ -1,0 +1,479 @@
+{
+  "schema_version": 1,
+  "environment": {
+    "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "git": "git version 2.49.0.windows.1"
+  },
+  "method": {
+    "cases_per_group": 10000,
+    "repetitions": 1,
+    "scenario_filter": [
+      "local_refactor",
+      "repeat_identical_state"
+    ],
+    "source_hashes": {
+      "benchmarks\\evaluate.py": "387baf11179f3f9bee38c7221191f6c66387f365c386051536ccb7a62e85740c",
+      "benchmarks\\fixture.py": "9e019a8271100826ef1e2e984d7b29b828ff122af931c83b621c069c77cbe2df",
+      "skills\\risk-based-validation\\scripts\\rbv\\__init__.py": "d78058b9b077dd5d9693919a39b877dc5dd470a76b85c67ff0fced14ec9b168c",
+      "skills\\risk-based-validation\\scripts\\rbv\\cli.py": "197a8b5e9179ed0f5e50ddc89f86b293778d4f2438098c03fcbc29f822620ae5",
+      "skills\\risk-based-validation\\scripts\\rbv\\config.py": "5c67b0b7afdf263e94d130a52ebdbfde8deef543d9833b69aaa4382e789a28cc",
+      "skills\\risk-based-validation\\scripts\\rbv\\planner.py": "e4c341cdf87e29eb80497513e9446b7134e97ceaf0693538c63ff4324aabbda9",
+      "skills\\risk-based-validation\\scripts\\rbv\\repository.py": "3cf2832fbcb15a3da5cf8efefcd29673ff224f4415719493f153e7a944e85622",
+      "skills\\risk-based-validation\\scripts\\rbv\\runner.py": "a734f42eeab24c41d829dc6407eae992beaae7f6420f3a46627d278a0c5fd1c4"
+    },
+    "timing": "perf_counter; sequential actual subprocesses; raw full suite has no planner overhead; baseline prechecks and cache warmup excluded and disclosed",
+    "synthetic_fixture": true,
+    "network": false,
+    "artificial_sleeps": false
+  },
+  "summary": {
+    "scenarios": 2,
+    "known_defects": 0,
+    "full_detected": 0,
+    "selective_detected": 0,
+    "missed_known_defects": 0,
+    "false_alarms": 0,
+    "full_commands": 12,
+    "executed_commands": 1,
+    "command_reduction_fraction": 0.9166666666666666,
+    "full_command_seconds": 13.537022499949671,
+    "selective_command_seconds": 0.16123440000228584,
+    "command_time_reduction_fraction": 0.9880893748974056,
+    "full_wall_seconds": 13.537081600050442,
+    "selective_wall_seconds": 1.8365640999982134,
+    "wall_time_reduction_fraction": 0.8643308687751894,
+    "excluded_warmup_seconds": 0.8038630000082776
+  },
+  "negative_control": {
+    "description": "Intentionally incorrect reviewed map labels runtime source as documentation.",
+    "full_detected": true,
+    "selective_detected": false,
+    "selective_status": "no_checks_required",
+    "conclusion": "Reviewed mappings are a trust boundary; file heuristics cannot prove safe omission."
+  },
+  "rows": [
+    {
+      "scenario": "local_refactor",
+      "repetition": 0,
+      "known_defect": false,
+      "baseline_clean": true,
+      "full": {
+        "elapsed_seconds": 7.207455200026743,
+        "results": [
+          {
+            "id": "pricing",
+            "returncode": 0,
+            "duration_seconds": 0.10659430001396686,
+            "stdout": "{\"group\": \"pricing\", \"assertions\": 10000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "cart",
+            "returncode": 0,
+            "duration_seconds": 0.09548030002042651,
+            "stdout": "{\"group\": \"cart\", \"assertions\": 10000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "security",
+            "returncode": 0,
+            "duration_seconds": 0.11002190003637224,
+            "stdout": "{\"group\": \"security\", \"assertions\": 30000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "data",
+            "returncode": 0,
+            "duration_seconds": 6.619852900039405,
+            "stdout": "{\"group\": \"data\", \"assertions\": 20000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "search",
+            "returncode": 0,
+            "duration_seconds": 0.11766739992890507,
+            "stdout": "{\"group\": \"search\", \"assertions\": 10000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "loader",
+            "returncode": 0,
+            "duration_seconds": 0.15780919999815524,
+            "stdout": "{\"group\": \"loader\", \"assertions\": 20000}\n",
+            "stderr": ""
+          }
+        ],
+        "detected_defect": false
+      },
+      "selective": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "5de51fc9e410484da28e511c679ed49a",
+        "status": "passed",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "3b697fac9ddfb35392a6e4d5c22dafb017a38a90",
+          "snapshot": "cbcad01a965bffab28d3a6a3d3e8bb5204cb975f69d7642f5e1f530b97474ff5",
+          "config_hash": "0fe75875de7ac693d17279d1452abf0ac8659d0ed7da641c359c4449f31830a6",
+          "risk": "targeted",
+          "changed": [
+            "src/search.py"
+          ],
+          "affected_components": [
+            "search"
+          ],
+          "required_tags": [],
+          "reasons": [],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [],
+          "selected": [
+            {
+              "id": "search",
+              "command": [
+                "{python}",
+                "checks.py",
+                "search",
+                "10000"
+              ],
+              "components": [
+                "search"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "affected components: search"
+              ]
+            }
+          ],
+          "skipped": [
+            {
+              "id": "pricing",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "cart",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "security",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "data",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "loader",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            }
+          ],
+          "estimated_cost": 1,
+          "full_cost": 11
+        },
+        "results": [
+          {
+            "id": "search",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.16123440000228584,
+            "log": ".rbv/logs/5de51fc9e410484da28e511c679ed49a/0.log",
+            "log_hash": "39e2c54ba0002bcf98c3c12ff495b7498913024db00416a7c721d8d11dd8ee9f",
+            "finished_at": 1793243434.044853,
+            "reused": false,
+            "key": "0cd120f9b175c16ccfd94315b30d526965b7102f760312ec330d82ef7a828f87"
+          }
+        ],
+        "escalated": false,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": false,
+        "context_hash": null,
+        "elapsed_seconds": 1.116870200028643,
+        "executed_seconds": 0.16123440000228584,
+        "diagnosis": null,
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/5de51fc9e410484da28e511c679ed49a.json"
+      },
+      "detected_defect": false,
+      "missed_known_defect": false,
+      "false_alarm": false,
+      "warmup": null
+    },
+    {
+      "scenario": "repeat_identical_state",
+      "repetition": 0,
+      "known_defect": false,
+      "baseline_clean": true,
+      "full": {
+        "elapsed_seconds": 6.329626400023699,
+        "results": [
+          {
+            "id": "pricing",
+            "returncode": 0,
+            "duration_seconds": 0.09270859998650849,
+            "stdout": "{\"group\": \"pricing\", \"assertions\": 10000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "cart",
+            "returncode": 0,
+            "duration_seconds": 0.1403506000060588,
+            "stdout": "{\"group\": \"cart\", \"assertions\": 10000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "security",
+            "returncode": 0,
+            "duration_seconds": 0.11035089998040348,
+            "stdout": "{\"group\": \"security\", \"assertions\": 30000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "data",
+            "returncode": 0,
+            "duration_seconds": 5.7044403000036255,
+            "stdout": "{\"group\": \"data\", \"assertions\": 20000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "search",
+            "returncode": 0,
+            "duration_seconds": 0.12895929999649525,
+            "stdout": "{\"group\": \"search\", \"assertions\": 10000}\n",
+            "stderr": ""
+          },
+          {
+            "id": "loader",
+            "returncode": 0,
+            "duration_seconds": 0.1527867999393493,
+            "stdout": "{\"group\": \"loader\", \"assertions\": 20000}\n",
+            "stderr": ""
+          }
+        ],
+        "detected_defect": false
+      },
+      "selective": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "358e2b0849de49a8a5154145e7d100a4",
+        "status": "passed",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "7f0b49637ba38bf692d072a086c046e9935aa2e0",
+          "snapshot": "cbcad01a965bffab28d3a6a3d3e8bb5204cb975f69d7642f5e1f530b97474ff5",
+          "config_hash": "0fe75875de7ac693d17279d1452abf0ac8659d0ed7da641c359c4449f31830a6",
+          "risk": "targeted",
+          "changed": [
+            "src/search.py"
+          ],
+          "affected_components": [
+            "search"
+          ],
+          "required_tags": [],
+          "reasons": [],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [],
+          "selected": [
+            {
+              "id": "search",
+              "command": [
+                "{python}",
+                "checks.py",
+                "search",
+                "10000"
+              ],
+              "components": [
+                "search"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "affected components: search"
+              ]
+            }
+          ],
+          "skipped": [
+            {
+              "id": "pricing",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "cart",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "security",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "data",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "loader",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            }
+          ],
+          "estimated_cost": 1,
+          "full_cost": 11
+        },
+        "results": [
+          {
+            "id": "search",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0,
+            "log": ".rbv/logs/5c8c299f5c13400ab477b182711aeace/0.log",
+            "log_hash": "39e2c54ba0002bcf98c3c12ff495b7498913024db00416a7c721d8d11dd8ee9f",
+            "finished_at": 1793243441.3040123,
+            "reused": true,
+            "key": "2f5e4c0f615f5e2b7485ea8f1a453e7c0158c389274db28bf8de9796006f5d8a",
+            "original_duration_seconds": 0.1473023999715224
+          }
+        ],
+        "escalated": false,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": true,
+        "context_hash": "7f1bdab97269356e73a0007046bdda81948eac24d03d09f239641f0ee61cfb32",
+        "elapsed_seconds": 0.7196938999695703,
+        "executed_seconds": 0,
+        "diagnosis": null,
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/358e2b0849de49a8a5154145e7d100a4.json"
+      },
+      "detected_defect": false,
+      "missed_known_defect": false,
+      "false_alarm": false,
+      "warmup": {
+        "schema_version": 1,
+        "engine_version": "0.1.0",
+        "run_id": "5c8c299f5c13400ab477b182711aeace",
+        "status": "passed",
+        "plan": {
+          "schema_version": 1,
+          "root": "<fixture>",
+          "base": "7f0b49637ba38bf692d072a086c046e9935aa2e0",
+          "snapshot": "cbcad01a965bffab28d3a6a3d3e8bb5204cb975f69d7642f5e1f530b97474ff5",
+          "config_hash": "0fe75875de7ac693d17279d1452abf0ac8659d0ed7da641c359c4449f31830a6",
+          "risk": "targeted",
+          "changed": [
+            "src/search.py"
+          ],
+          "affected_components": [
+            "search"
+          ],
+          "required_tags": [],
+          "reasons": [],
+          "blockers": [],
+          "hazards": [],
+          "docs_only_paths": [],
+          "selected": [
+            {
+              "id": "search",
+              "command": [
+                "{python}",
+                "checks.py",
+                "search",
+                "10000"
+              ],
+              "components": [
+                "search"
+              ],
+              "inputs": [
+                "checks.py"
+              ],
+              "tags": [],
+              "cost": 1,
+              "cache": true,
+              "timeout": 300,
+              "reasons": [
+                "affected components: search"
+              ]
+            }
+          ],
+          "skipped": [
+            {
+              "id": "pricing",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "cart",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "security",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "data",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            },
+            {
+              "id": "loader",
+              "reason": "outside reviewed impact map; no changed declared inputs"
+            }
+          ],
+          "estimated_cost": 1,
+          "full_cost": 11
+        },
+        "results": [
+          {
+            "id": "search",
+            "status": "passed",
+            "returncode": 0,
+            "diagnosis": null,
+            "duration_seconds": 0.1473023999715224,
+            "log": ".rbv/logs/5c8c299f5c13400ab477b182711aeace/0.log",
+            "log_hash": "39e2c54ba0002bcf98c3c12ff495b7498913024db00416a7c721d8d11dd8ee9f",
+            "finished_at": 1793243441.3040123,
+            "reused": false,
+            "key": "2f5e4c0f615f5e2b7485ea8f1a453e7c0158c389274db28bf8de9796006f5d8a"
+          }
+        ],
+        "escalated": false,
+        "blockers": [],
+        "unresolved": [],
+        "invalidated": false,
+        "cache_enabled": true,
+        "context_hash": "7f1bdab97269356e73a0007046bdda81948eac24d03d09f239641f0ee61cfb32",
+        "elapsed_seconds": 0.8038630000082776,
+        "executed_seconds": 0.1473023999715224,
+        "diagnosis": null,
+        "limitations": [
+          "Selection depends on reviewed mappings and registered checks; it is not a proof of correctness.",
+          "Ignored files require extra_inputs; external state and toolchains require a caller-maintained context token.",
+          "Local evidence is not a trusted CI attestation."
+        ],
+        "report_path": "<fixture>/5c8c299f5c13400ab477b182711aeace.json"
+      }
+    }
+  ]
+}
